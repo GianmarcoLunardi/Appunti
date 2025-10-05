@@ -18,7 +18,7 @@ using NUnit.Framework;
   mockEmailService.Setup(m => m.SendEmail(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()))
  .Returns(true);
 
- //si chiama istanza la classe che poi chimera la DI del Servizio
+ //si istanz1a la classe Controller che poi chimera la DI del Servizio
  var Controller = new UserService(mockEmailService.Object);
  // Act 
  bool result =  Controller.RegisterUser("test@example.com");
@@ -26,8 +26,8 @@ using NUnit.Framework;
  Assert.IsTrue(result);
 
 
-   
- mockEmailService.Verify(m =>
- m.SendEmail("test@example.com", "Welcome!", "Welcome to our 
-service!"), Times.Once);
+ // è possibile verifica anche uno specifico paramentro della chiamata al servizio
+ Controller.Verify(m =>
+ m.SendEmail("test@example.com", "Welcome!", "Welcome to our service!"), Times.Once); 
+  // inoltre specifica che il servizio è stato chiamato una sola volta
  }
