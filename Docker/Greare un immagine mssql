@@ -1,0 +1,16 @@
+hub.docker.com
+Sito che contiene le immagini docked
+
+Si sceglie l immagine che si desidera scaticare nel nostro caso MSQLS Server
+
+__Da Riga di Comando__
+
+Docker pull .mcr.microsoft.com/msql/server
+*il pul consentira di fare il downloa dell  immagine*
+l immagine sarà scaricata, inoltre sara visibile anche dall app docker
+
+Avviare l immagine con paramentri
+docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=123456a@' -p 1400:1433 -d mcr.microsoft.com/mssql/server:2019-latest
+-e SA_PASSWORD=123456a@'  assegnazione all utente sa la passqwped
+-p fa il mapping delle porte 1400:1433  per non generare conflitti sualla porta sql locale con quella ( si imposta su docker 1433)
+-d mcr.microsoft.com/mssql/server:2019-latest specifica quale immagine avviare 
