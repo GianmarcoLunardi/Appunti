@@ -8,7 +8,7 @@ using Moq;
 using NUnit.Framework;
 
 [Test]
- public void RegisterUser () 
+ public void Controller_UtilizzaServioMail_RitornaOK() 
 {
   var mockEmailService = new Mock<IEmailService>();  
    // Arrange Inizializzazione del servizio 
@@ -18,10 +18,10 @@ using NUnit.Framework;
   mockEmailService.Setup(m => m.SendEmail(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()))
  .Returns(true);
 
- //si chiama istanza il servizio
- var userService = new UserService(mockEmailService.Object);
+ //si chiama istanza la classe che poi chimera la DI del Servizio
+ var Controller = new UserService(mockEmailService.Object);
  // Act 
- bool result =  userService.RegisterUser("test@example.com");
+ bool result =  Controller.RegisterUser("test@example.com");
  // Assert
  Assert.IsTrue(result);
 
