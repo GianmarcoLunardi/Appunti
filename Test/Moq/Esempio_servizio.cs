@@ -9,7 +9,12 @@ public interface lEmailService
 //Sotto viene creata una classe che utilizza il servizio per esempio un controller
 
 
-public class UserService_Controller
+// Nella classe Controller
+// si vuole testare metodo RegisterUser(string email) 
+// La classe controller instanza una DI del Servizio di mailService
+// poi ritorna true o folse a secondo di cone è andato l esecuzione del servizio
+
+public class Controller
 {
  private readonly IEmailService _emailService;
  // viiene instanziata la DI
