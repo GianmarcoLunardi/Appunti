@@ -13,3 +13,10 @@ Vere e propie pagine web
 Selezionare la Repo
 Settings>Page     (Github Pages)
 Guardare la documentazione
+
+Una volta abilitato l account a utilizzare le GitHub Pages
+è possibile avere a dispozione dello spazio web su cui ospitare il proprio sito web
+con url
+http://<organization_name>.github.io/<projectname>
+Dove <organization_name> è il nome utente o il nome dell azienda.
+
