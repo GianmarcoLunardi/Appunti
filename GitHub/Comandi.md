@@ -1,4 +1,4 @@
-***Aggiunta di un file***
+*Aggiunta di un file*
 In alto a destra Add File 
 
 ***Cancellazione File/Directory***
