@@ -4,9 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Docker</title>
-    <!-- 
-     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/cerulean/bootstrap.min.css">
-    -->
 
       <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/Minty/bootstrap.min.css" rel="stylesheet">
    
@@ -48,7 +45,7 @@
     </div>
   </div>
 </nav>
-<!-- Inizio Pagina -->
+<!-- Inizio Pagina  Visual Studio-->
     <h1 > Visual Studio 22 </h1>
 
     <spamc lass=".text-success"> Alla creazione del progetto: </spam> spuntare Docker
@@ -63,7 +60,47 @@
     </div>
       
 
-  <!-- Fine Della PAgina-->  
+  <!-- Fine Della PAgina Visual Studio-->  
+
+      <!-- Inizio della pagina come fare un docker sqlserver -->
+       <h1 > Visual Studio 22 </h1>
+       <div class="badge text-bg-primary text-wrap" style="width: 6rem;">
+        <a href="https://hub.docker.com/"> https://hub.docker.com/ </a>
+      </div> 
+      Sito che contiene tutte immagini docked </br>
+
+Dalla Gui di dicke c' un casella per cercare in immagine da scaricare  nostro caso MSQLS Server<br>
+
+Da Riga di Comando<br>
+Docker pull .mcr.microsoft.com/msql/server 
+
+<h1 >Mettere in esecuzione l immagine e fornigli i giusti paramentri </h1>
+docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=123456a@' -p 1400:1433 -d mcr.microsoft.com/mssql/server:2019-latest -e SA_PASSWORD=123456a@' assegnazione all utente sa la passqwped -p fa il mapping delle porte 1400:1433 per non generare conflitti sualla porta sql locale con quella ( si imposta su docker 1400) -d mcr.microsoft.com/mssql/server:2019-latest specifica quale immagine avviare --name mio_container
+--hostname webserver01 \<br>
+      <div class="container">
+      -p 1400:1433 questo fa il mapping delle porte <br>
+      1433 è la pprta di comunicanzion dei mssqul di default <br>
+      1400 è la porta che verrà utilizzata per accere da smqlserver dentro Docker <br>
+      -d mcr.microsoft.com/mssql/server:2019-latest specifica quale immagine avviare<br>
+      --name mio_container
+      --hostname webserver01 , è il nome da dare all host 
+        <br>
+Per la configurazione dei cuntiner, possibile utilizza Docker UI Per La Lettura delle tabelle è possibile configurare mmc con porta e nome host dell immagine docker
+      </div>
+docker ps lista di tutti i containe
+
+
+    <div class="Container">
+      <div class="alert alert-primary" role="alert">
+        Nb: nwl lmomento in cui si avvia un progetto docker addicurarzi che tutti i progetti docker collegati siano avviati: sqlserver, Api, Front End
+        Iniltre i pregetti docker sono tutti configurabili tramite la gui di docker
+      </div>
+    </div>
+      
+
+Nel quale poi è possibile leggere i dati della tabella
+      <!-- Fine della pagina docker fine pagina -->
+      
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
