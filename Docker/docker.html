@@ -58,19 +58,21 @@
     <spamc lass=".text-success"> Dopo la creazione del progetto: </spam> 
       da Esplora soluzione Cliccare sul progetto>selezionare supporto Docker
       la file lauchsetting.json verrà aggiunto un profilo Docker
-      
+      <br>
     <div class="Container">
       <div class="alert alert-primary" role="alert">
         Nb: nwl lmomento in cui si avvia un progetto docker addicurarzi che tutti i progetti docker collegati siano avviati: sqlserver, Api, Front End
        </div>
     </div>
-     
+     <br>
+     <br>
         
 
   <!-- Fine Della PAgina Visual Studio-->  
 
       <!-- Inizio della pagina come fare un docker sqlserver -->
-       <h1 > Visual Studio 22 </h1>
+       <h3> Creare un immagine docker per sql </h3>
+      <br>
       
         <a href="https://hub.docker.com/"> https://hub.docker.com/ </a>
      
@@ -80,7 +82,8 @@ Dalla Gui di dicke c' un casella per cercare in immagine da scaricare  nostro ca
 
 Da Riga di Comando<br>
 Docker pull .mcr.microsoft.com/msql/server 
-
+<br><br>
+      
 <h1 >Mettere in esecuzione l immagine e fornigli i giusti paramentri </h1>
 docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=123456a@' -p 1400:1433 -d mcr.microsoft.com/mssql/server:2019-latest -e SA_PASSWORD=123456a@' assegnazione all utente sa la passqwped -p fa il mapping delle porte 1400:1433 per non generare conflitti sualla porta sql locale con quella ( si imposta su docker 1400) -d mcr.microsoft.com/mssql/server:2019-latest specifica quale immagine avviare --name mio_container
 --hostname webserver01 \<br>
@@ -95,7 +98,7 @@ docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=123456a@' -p 1400:1433 -d mcr.micr
 Per la configurazione dei cuntiner, possibile utilizza Docker UI Per La Lettura delle tabelle è possibile configurare mmc con porta e nome host dell immagine docker
       </div>
 docker ps lista di tutti i containe
-
+ <br> <br>
 
     <div class="Container">
       <div class="alert alert-primary" role="alert">
