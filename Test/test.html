@@ -1,3 +1,5 @@
+
+
 <!doctype html>
 <html lang="it">
   <head>
@@ -68,7 +70,7 @@
       </div>
       
     <p class="fs-4">Convenzione sul nome dei file</p> 
-      Una Soluzione di tipo Test si chiama con il nome della soluzione.test.
+      Una Soluzione di tipo Test si chiama con il nome della soluzione.test.Adapter
       Es: si vuole testare la soluzione EcdlBooking il test sulla soluzione si chiamera EcdlBooking.test
       <br>
       Le struttura della cartelle della soluzione deve essere uguale nella soluzione da testate
@@ -76,6 +78,59 @@
       convenzione sul nome del metodo del test:
       NoneMetodo_CasoDelTest_Risultato
       <br>
+      <div class="container"> 
+
+
+    [TestFixture]
+    internal class ContextTest
+    {
+       
+       [Fact] 
+        public void Setup()
+        {
+
+            <b>Arrange</b> continie inizializzazione delle variabili da testare
+            int i = 0;
+            <b>Act</b> contiene il metodo da testare
+            var result = math.Add(1);
+            //Assertion Confronta i risultati con quelli sperati
+            result.Assert(result, verifica una condizione)
+           
+            
+        }
+    }
+        
+      </div>
+      
+    <p class="fs-4">Attibuti che si possono mettere al metodo da testare</p> 
+      [Test, TimeOut(5000)] // tempo massimo di completamento 5 sec
+      [Categoty("nome della categoria che si vuole assegnare")]<br>
+      [Ingnore("motivo per cui si vuole ignorare un test es: lento da eseguire")]<br>
+      [TestCase(1,2,3)]
+      metido_da_testare (int a , int b, int c)        {
+      {
+      var result math(a,b);
+      Aseert(c, IsEqual(c))     
+            
+        }
+      <br><br>
+      <p class="fs-4">Possibili Assert</p> 
+      per stringhe , array
+      Assert.That(stringa, IsNotEmpty()) <br>
+      Assert.That(stringa, DoesStarWith("")) <br>
+      Assert.That(stringa, DoesContain(""))<br>
+      Assert.That(stringa, Has.Lenth.CraracterThen(10))<br>
+      Collezioni<br>
+      Assert.That(collezione, Has.Count.EqualTo(5))<br>
+      Assert.That(collezione, Conmtain.Items(5))<br>
+      Assert.That(collezione, IsOrdered())<br>
+      Su singoli valori <br>
+      Assert.AreEqual(a, b)<br>
+      Assert.IsFalse(r)<br>
+      Assert.IsNull(r)<br>
+      è possibile fornire anche una desctizione sul risultato  es: Asser.IsNull(a,"descrizione")<br>
+      
+      
       
     <spamc lass=".text-success"> Alla creazione del progetto: </spam> spuntare Docker
     <spamc lass=".text-success"> Dopo la creazione del progetto: </spam> 
