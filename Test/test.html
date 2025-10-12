@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NUnit</title>
+  <head>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/quartz/bootstrap.min.css">
+ 
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../docker/docker.html">Docker</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+    <div class="container">
+  
+
+<!-- Inizio Pagina  Visual Studio-->
+      <br> 
+      <br>
+    <h3> Visual Studio 22 </h3>
+
+    <spamc lass=".text-success"> Alla creazione del progetto: </spam> spuntare Docker
+    <spamc lass=".text-success"> Dopo la creazione del progetto: </spam> 
+      da Esplora soluzione Cliccare sul progetto>selezionare supporto Docker
+      la file lauchsetting.json verrà aggiunto un profilo Docker
+      <br>
+    <div class="Container">
+      <div class="alert alert-primary" role="alert">
+        Nb: nwl lmomento in cui si avvia un progetto docker addicurarzi che tutti i progetti docker collegati siano avviati: sqlserver, Api, Front End
+       </div>
+    </div>
+     <br>
+     <br>
+        
+
+  <!-- Fine Della PAgina Visual Studio-->  
+
+      <!-- Inizio della pagina come fare un docker sqlserver -->
+       <h3> Creare un immagine docker per sql </h3>
+      <br>
+      
+        <a href="https://hub.docker.com/" target="_blank"> https://hub.docker.com/ </a>
+     
+      Sito che contiene tutte immagini docked </br>
+
+Dalla Gui di dicke c' un casella per cercare in immagine da scaricare  nostro caso MSQLS Server<br>
+
+Da Riga di Comando<br>
+Docker pull .mcr.microsoft.com/msql/server 
+<br><br>
+      
+<h3 >Mettere in esecuzione l immagine </h3>
+      <p class=".text-dark-emphasis">
+docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=123456a@' -p 1400:1433 -d mcr.microsoft.com/mssql/server:2019-latest -e SA_PASSWORD=123456a@' assegnazione all utente sa la passqwped -p fa il mapping delle porte 1400:1433 per non generare conflitti sualla porta sql locale con quella ( si imposta su docker 1400) -d mcr.microsoft.com/mssql/server:2019-latest specifica quale immagine avviare --name mio_container
+--hostname webserver01 </p>
+      <div class="container">
+      -p 1400:1433 questo fa il mapping delle porte <br>
+      1433 è la pprta di comunicanzion dei mssqul di default <br>
+      1400 è la porta che verrà utilizzata per accere da smqlserver dentro Docker <br>
+      -d mcr.microsoft.com/mssql/server:2019-latest specifica quale immagine avviare<br>
+      --name mio_container
+      --hostname webserver01 , è il nome da dare all host 
+        <br>
+Per la configurazione dei cuntiner, possibile utilizza Docker UI Per La Lettura delle tabelle è possibile configurare mmc con porta e nome host dell immagine docker
+      </div>
+
+ <p class=".text-dark-emphasis">     
+docker ps lista di tutti i containe
+ </p>
+ <br> <br>
+
+    <div class="Container">
+      <div class="alert alert-primary" role="alert">
+        Per la configurazione dei cuntiner, possibile utilizza Docker UI Per La Lettura delle tabelle è possibile configurare mmc con porta e nome host dell immagine docker
+      </div>
+    </div>
+      
+
+Nel quale poi è possibile leggere i dati della tabella
+
+
+      </div>
+      <!-- Fine della pagina docker fine pagina -->
+      
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+    
+    </body>
+</html>
