@@ -84,9 +84,10 @@ Da Riga di Comando<br>
 Docker pull .mcr.microsoft.com/msql/server 
 <br><br>
       
-<h1 >Mettere in esecuzione l immagine e fornigli i giusti paramentri </h1>
+<h3 >Mettere in esecuzione l immagine </h3>
+      <p class=".text-dark-emphasis">
 docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=123456a@' -p 1400:1433 -d mcr.microsoft.com/mssql/server:2019-latest -e SA_PASSWORD=123456a@' assegnazione all utente sa la passqwped -p fa il mapping delle porte 1400:1433 per non generare conflitti sualla porta sql locale con quella ( si imposta su docker 1400) -d mcr.microsoft.com/mssql/server:2019-latest specifica quale immagine avviare --name mio_container
---hostname webserver01 \<br>
+--hostname webserver01 </p>
       <div class="container">
       -p 1400:1433 questo fa il mapping delle porte <br>
       1433 è la pprta di comunicanzion dei mssqul di default <br>
