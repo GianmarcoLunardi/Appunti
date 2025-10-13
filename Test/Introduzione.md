@@ -4,30 +4,43 @@
   
 
 ##Tipi di Test##
-    <p class="fs-3">Unitt</p>
+      -Unitt
       Sono test senza dipendenze esterne
-    <p class="fs-4">Integration</p> 
+      -integration
       sono test con dipendenze estene come esempio db o file.
-    <p class="fs-4">End-To-End</p> 
+      -End-To-End 
       test che sono eseguibili sull interfaccia grafica
-    <br>
+   
+    
       In visual studio installare i pacchetti
-      <div class="continer">
-        Nunit <br>
-        Nunit3TestApplication<br>
+
+        Nunit
+        Nunit3TestApplication
         Microsoft.Test.Application
-      </div>
       
-    <p class="fs-4">Convenzione sul nome dei file</p> 
-      Una Soluzione di tipo Test si chiama con il nome della soluzione.test.Adapter
+     **Convenzione sul nome dei file< 
+      -Una Soluzione di tipo Test si chiama con il nome della soluzione.test.Adapter
       Es: si vuole testare la soluzione EcdlBooking il test sulla soluzione si chiamera EcdlBooking.test
-      <br>
-      Le struttura della cartelle della soluzione deve essere uguale nella soluzione da testate
-      <br> 
-      convenzione sul nome del metodo del test:
+      
+      -Le struttura della cartelle della soluzione deve essere uguale nella soluzione da testate
+
+  **Creazione dei Test con Visual Studio**
+  -Alla creazione del progetto:
+   -Dopo la creazione del progetto:
+    da Esplora soluzione Cliccare sul progetto>selezionare supporto Docker
+      la file lauchsetting.json verrà aggiunto un profilo Docker
+
+        Nb: nwl lmomento in cui si avvia un progetto docker addicurarzi che tutti i progetti docker collegati siano avviati: sqlserver, Api, Front End
+       </div>
+    </div>
+
+
+
+      
+      -convenzione sul nome del metodo del test:
       NoneMetodo_CasoDelTest_Risultato
-      <br>
-      <div class="container"> 
+
+     Esempio di codice
 
 
     [TestFixture]
@@ -38,52 +51,54 @@
         public void TMetodo_CasoDelTest_Risultato()
         {
 
-            <b>Arrange</b> continie inizializzazione delle variabili da testare
+            *Arrange< continie inizializzazione delle variabili da testare
             int i = 0;
-            <b>Act</b> contiene il metodo da testare
+            *Act contiene il metodo da testare
             var result = math.Add(1);
-            //Assertion Confronta i risultati con quelli sperati
+            Assertion Confronta i risultati con quelli sperati
             result.Assert(result, verifica una condizione)
            
             
         }
       }
 
-        <br>
+        
         Al dine di creare un metodo di inizailizzazione di una classe 
-        [setup]<br>
+        [setup]
         public void SetUp(){
         IService _service = new Mock<Iservice>();
         }
         
-      </div>
       
-    <p class="fs-4">Attibuti che si possono mettere al metodo da testare</p> 
+      
+       **Attibuti che si possono mettere al metodo da testare
+       
       [Test, TimeOut(5000)] // tempo massimo di completamento 5 sec
       [Categoty("nome della categoria che si vuole assegnare")]<br>
       [Ingnore("motivo per cui si vuole ignorare un test es: lento da eseguire")]<br>
       [TestCase(1,2,3)]
+      [TestCase(4.5.6)]
       metido_da_testare (int a , int b, int c)        {
       {
       var result math(a,b);
       Aseert(c, IsEqual(c))     
             
         }
-      <br><br>
-      <p class="fs-4">Possibili Assert</p> 
+      
+      *Possibili Assert 
       per stringhe , array
-      Assert.That(stringa, IsNotEmpty()) <br>
-      Assert.That(stringa, DoesStarWith("")) <br>
-      Assert.That(stringa, DoesContain(""))<br>
-      Assert.That(stringa, Has.Lenth.CraracterThen(10))<br>
-      Collezioni<br>
-      Assert.That(collezione, Has.Count.EqualTo(5))<br>
-      Assert.That(collezione, Conmtain.Items(5))<br>
-      Assert.That(collezione, IsOrdered())<br>
-      Su singoli valori <br>
-      Assert.AreEqual(a, b)<br>
-      Assert.IsFalse(r)<br>
-      Assert.IsNull(r)<br>
+      Assert.That(stringa, IsNotEmpty())
+      Assert.That(stringa, DoesStarWith(""))
+      Assert.That(stringa, DoesContain(""))
+      Assert.That(stringa, Has.Lenth.CraracterThen(10))
+      -Collezioni
+      Assert.That(collezione, Has.Count.EqualTo(5))
+      Assert.That(collezione, Conmtain.Items(5))
+      Assert.That(collezione, IsOrdered())
+      -Su singoli valori
+      Assert.AreEqual(a, b)
+      Assert.IsFalse(r)
+      Assert.IsNull(r)
       è possibile fornire anche una desctizione sul risultato  es: Asser.IsNull(a,"descrizione")<br>
       
       
