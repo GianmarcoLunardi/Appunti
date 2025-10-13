@@ -6,7 +6,7 @@
 
 protected override void OnModelCreating(ModelBuilder modelBuilder)
 {
-    base.OnModelCreating(modelBuilder);
+    base.OnModelCreating(modelBuilder);<a href="https://www.guidgenerator.com/" target="_blank" rel="noopener">Guid</a>
        
         '''
         modelBuilder.Entity<ApplicationUser>().HasData(
