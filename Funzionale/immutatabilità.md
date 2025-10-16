@@ -7,6 +7,8 @@ public DateTime PropC { get; private set; }
 public IEnumerable<double> PropD { get; private set; }
 public IList<string> PropE { get; private set; }
 public SubClassB PropF { get; private set; }
+
+// inizilaizzazione
 public ClassA(string propA, int propB, DateTime propC,
 IEnumerable<double> propD, IList<string> propE, SubClassB
 propF)
