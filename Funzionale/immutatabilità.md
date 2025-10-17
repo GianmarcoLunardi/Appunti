@@ -86,12 +86,12 @@ public string SayHello() => "Hello " + this.Name;
 **Tuple
 
 Esempio di dichiarazione di una tupla
-(double, string) t1 = (4.5, "OK");
-var t = (Count: 5, Status: "OK");
+```(double, string) t1 = (4.5, "OK");
+```var t = (Count: 5, Status: "OK");
 
 Esempio di accesso da nome
-t.count  = 2
-t.Status="OK"
+```t.count  = 2
+```t.Status="OK"
 
 Ritorno di una funzione come tupla
 ```(int Id, string Name) GetPerson() => (1, "Alex");
