@@ -34,8 +34,6 @@ Func<int, int, string> FunzioneAggiungi ;
 var addTen = (x,y) => x + 10;
 var twenty = addTen(10, 20);
 
-
-
 una funzione rispetto a una dichiarazione è qualcosa che deve essere valutato.
 
 
@@ -54,6 +52,37 @@ else
 AddUntil(startValue + 1, endValue);
 }
 
+**Immutabilita
+una variabile puo ricevere un valore solo all inizializzazuine,  e pero possibile riassegnare il valore a un altra varibile
+(il concetto è qyello di una funzione matematca che non puo cambiare il valore di imput durante l elaborazione)
+
+public class Person
+{
+    public string Name { get; }
+    public int Age { get; }
+
+    public Person(string name, int age)
+    {
+        Name = name;
+        Age = age;
+    }
+}
+
+var person = new Person("Alice", 30);
+// person.Name = "Bob"; // Questo genererà un errore di compilazione
+
+
+
+Concetti base delle funzioni 
+
+-Le funzioni non influiscono sullo stato esterno
+Con soliti parametri di input si ricevono soliti parametri di impuy
+Non Hanno effetti collaterali e non utilizzano eccezioni
+
+Le Funzioni Pure non hanno riferimenti a vearibile esterne
+public void Add(int a) => this.total += a;
+public string SayHello() => "Hello " + this.Name;
+
 **Tuple
 
 Esempio di dichiarazione di una tupla
@@ -65,5 +94,5 @@ t.count  = 2
 t.Status="OK"
 
 Ritorno di una funzione come tupla
-(int Id, string Name) GetPerson() => (1, "Alex");
+```(int Id, string Name) GetPerson() => (1, "Alex");
 
