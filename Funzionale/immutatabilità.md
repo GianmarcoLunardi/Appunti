@@ -96,3 +96,19 @@ Esempio di accesso da nome
 Ritorno di una funzione come tupla
 ```(int Id, string Name) GetPerson() => (1, "Alex");
 
+
+** Option<T>
+Option<string> Stringa = null o "ciao";
+è un tipo di tanto che può gestire la possibilità che una  variabile abbia un valore null senza che non vi sia pericolo generi eccezionei
+Option<int> trovato = Some(42); // oppure: Option<int>.Some(42)
+Option<int> nonTrovato = None();
+
+public static Option<T> Some(T value) => new Option<T> { _hasValue = true, _value = value };
+public static Option<T> None() => new Option<T> { _hasValue = false, _value = default! };
+
+Stato a due possibilità: Some(T value) oppure None (nessun valore).
+Maybe<int> trovato = Maybe.Some(42);
+
+Maybe<int> nonTrovato = Maybe.None<int>();
+
+Uso con Match: var msg = trovato.Match( Some: v => $"Valore trovato: {v}", None: () => "Nessun valore trovato" );
