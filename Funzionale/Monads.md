@@ -15,4 +15,21 @@ IEnumerable<T>
 Struttura dei contenitori
 
 Funzione Return: prende un (o più valorei) tipo primitivo e lo incapsula dentro un contenitore
-Funzione Binding : prende una funzione la applica ai volori del contenitore, ottine un nuovo contenitore con i valori del codominio.
+Funzione Binding : prende una funzione la applica ai volori del contenitore, ottine un nuovo contenitore con i valori del codominio
+
+Pricipi:
+Associativo, se abbiamo una catena di funzioni annidate appplicate a un contenitore, qualunque si l  ordine di easecuzioni il risualtato non cambia
+Identita Se associamo una funzione al valore ci un contenitore
+
+**Librerie**
+_LanguageExt_ : contine Option<t> Either<T>
+_Option_ : solito
+_Monads.net_
+Maybe<T>, Either<T>, List<T>
+
+Es:
+'''
+Maybe<int> contenitore = new Maybe<int>(5);
+if contenitore.HasValue then Console.WriteLine(Contenitore.value);
+'''
+
