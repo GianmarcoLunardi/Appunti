@@ -42,6 +42,7 @@ Le HF sono funzioni che non cambiano ne utilizzano variabili esterne
 In ogni stato del programma, con i soliti valori di input restituiscono solito output
 Non hanno effetti collaterali , non lanciano eccezioni durante l esecuzione di un programma.
 
+**HF Ricorsione**
 Preferiscono utilizzare la ricorsione prima di utilizzare i cicli
 la funzione ha due paramentri , uno è il paramentro di arresto.
 
