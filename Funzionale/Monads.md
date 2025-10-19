@@ -33,3 +33,28 @@ Maybe<int> contenitore = new Maybe<int>(5);
 if contenitore.HasValue then Console.WriteLine(Contenitore.value);
 ```
 
+Agiunta di altre metodi 
+Funzione map Map: C<T> ->  C<R>   dove  R=f(T)
+Questa funzione consente di avere altri contenitori, o meglio la concatenazione di funzioni
+```
+Maybe<T> Map(FUNCT<T,Maybe<R>> f) {
+Maybe<T>.HasValue: Maybe.Some(f(T).value)) ? Maybe<R>.HasValue=false:
+}
+```
+Funzione  Bind
+Prene il calore del contenitore in T se ha un volare fitorna f(T) nel caso non ha voalore ritorna il valore Maybe<T>.None
+```
+Funzione map Bind: C<T> ->  O 
+Maybe<T> Map(FUNCT<T,Maybe<R>> f) {
+Maybe<T>.HasValue: f(T).value)) ? Maybe<R>.None:
+}
+```
+Funzione  GetOfElse
+Prene il calore del contenitore in T se ha un volare fitorna f(T) nel caso non ha voalore ritorna Di Default
+```
+Funzione map Bind: C<T> ->  O 
+Maybe<T> Map(FUNCT<T,Maybe<R>> f) {
+Maybe<T>.HasValue: f(T).value)) ? DefaultValue:
+}
+```
+
