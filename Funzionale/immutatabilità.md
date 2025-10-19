@@ -85,21 +85,10 @@ Le Funzioni Pure non hanno riferimenti a vearibile esterne
 public void Add(int a) => this.total += a;
 public string SayHello() => "Hello " + this.Name;
 
-**Tuple
-
-Esempio di dichiarazione di una tupla
-```(double, string) t1 = (4.5, "OK");
-```var t = (Count: 5, Status: "OK");
-
-Esempio di accesso da nome
-```t.count  = 2
-```t.Status="OK"
-
-Ritorno di una funzione come tupla
-```(int Id, string Name) GetPerson() => (1, "Alex");
 
 
-** Option<T>
+
+**Option<T>**
 Option<string> Stringa = null o "ciao";
 è un tipo di tanto che può gestire la possibilità che una  variabile abbia un valore null senza che non vi sia pericolo generi eccezionei
 Option<int> trovato = Some(42); // oppure: Option<int>.Some(42)
