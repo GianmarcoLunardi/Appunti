@@ -1,0 +1,48 @@
+Caricamento lento dei dati
+
+Data una collezione di dati 
+
+'
+var input = new[]
+{
+    75,
+    22,
+    36
+};
+'
+
+Estrae un dato alla volta dalla collezione tipo un ciclo foreach
+
+var output = input.Select(x => DoSomethingOne(x))
+                  .Select(x => DoSomethingTwo(x))
+                  .Select(x => DoSomethingThree(x));
+Fornendo queste chiamate sullo steck
+
+18/08/1982 11:24:00 - DoSomethingOne(75)
+18/08/1982 11:24:01 - DoSomethingTwo(75)
+18/08/1982 11:24:02 - DoSomethingThree(75)
+18/08/1982 11:24:03 - DoSomethingOne(22)
+18/08/1982 11:24:04 - DoSomethingTwo(22)
+18/08/1982 11:24:05 - DoSomethingThree(22)
+18/08/1982 11:24:06 - DoSomethingOne(36)
+18/08/1982 11:24:07 - DoSomethingTwo(36)
+18/08/1982 11:24:08 - DoSomethingThree(36)
+
+
+
+
+8 var temp1 = input.Select(x => DoSomethingOne(x)).ToArray();
+9 var temp2 = input.Select(x => DoSomethingTwo(x)).ToArray();
+10 var finalAnswer = input.Select(x => DoSomethingThree(x)).ToArray();
+
+18/08/1982 11:24:00 - DoSomethingOne(75)
+18/08/1982 11:24:01 - DoSomethingOne(22)
+18/08/1982 11:24:02 - DoSomethingOne(36)
+18/08/1982 11:24:03 - DoSomethingTwo(75)
+18/08/1982 11:24:04 - DoSomethingTwo(22)
+18/08/1982 11:24:05 - DoSomethingTwo(36)
+18/08/1982 11:24:06 - DoSomethingThree(75)
+18/08/1982 11:24:07 - DoSomethingThree(22)
+18/08/1982 11:24:08 - DoSomethingThree(36)
+
+Ad gni chiamata  .ToArray() estrae un nuovo dato
