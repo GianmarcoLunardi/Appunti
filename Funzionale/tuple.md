@@ -14,6 +14,8 @@ Ritorno di una funzione come tupla
 `(int Id, string Name) GetPerson() => (1, "Alex");'
 
 **ES**
+esaminato i cicli per convertire un elemento in un altro, X elementi in ingresso → X nuovi elementi in uscita
+
 Nel mio esempio qui sopra, uso una Tupla per accoppiare dati provenienti da due funzioni di ricerca per ogni ID di film dato, il che significa che posso eseguire un'operazione Select successiva per semplificare la coppia di oggetti in un singolo valore di ritorno.
 
 '
