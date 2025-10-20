@@ -89,7 +89,9 @@ public record Pesona
 maybe<Presona> Trova(string nome => nome=="Lucio")
 {
 //caso in cui riesce a trovare un record
-?Mayve<Persona>,HasValue? new Persone {name='Lucio', eta=24} : Maybe<Persona>.None
+Mayve<Persona>.HasValue? new Persone {name='Lucio', eta=24} : Maybe<Persona>.None
 }
-
-
+```
+Esempio che utilizza tutte le funzioni studiate
+string personName="john";
+Funct<int,int> aggiunge_uno = (p=p+1);
