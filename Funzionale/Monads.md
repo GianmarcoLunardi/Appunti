@@ -28,13 +28,14 @@ _Monads.net_
 Maybe<T>, Either<T>, List<T>
 
 Es:
+```
 <span style="color:green">
 Maybe<int> contenitore = new Maybe<int>(5);
 if contenitore.HasValue then Console.WriteLine(Contenitore.value);
 
 
 </span>
-
+```
 
 Agiunta di altre metodi 
 Funzione map Map: C<T> ->  C<R>   dove  R=f(T)
