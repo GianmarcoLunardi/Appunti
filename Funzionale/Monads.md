@@ -29,12 +29,14 @@ Maybe<T>, Either<T>, List<T>
 
 Es:
 
-<span style="color:green">
+
+
+`#0969DA`
 ```
 Maybe<int> contenitore = new Maybe<int>(5);
 if contenitore.HasValue then Console.WriteLine(Contenitore.value);
 ```
-</span>
+
 
 
 Agiunta di altre metodi 
