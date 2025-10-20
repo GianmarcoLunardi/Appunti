@@ -44,7 +44,8 @@ Maybe<T>.HasValue: Maybe.Some(f(T).value)) ? Maybe<R>.HasValue=false:
 Funzione  Bind
 Prene il calore del contenitore in T se ha un volare fitorna f(T) nel caso non ha voalore ritorna il valore Maybe<T>.None
 ```
-Funzione map Bind: C<T> ->  O 
+Funzione  Bind: C<T> ->  f(T)
+
 Maybe<T> Map(FUNCT<T,Maybe<R>> f) {
 Maybe<T>.HasValue: f(T).value)) ? Maybe<R>.None:
 }
@@ -53,8 +54,36 @@ Funzione  GetOfElse
 Prene il calore del contenitore in T se ha un volare fitorna f(T) nel caso non ha voalore ritorna Di Default
 ```
 Funzione map Bind: C<T> ->  O 
-Maybe<T> Map(FUNCT<T,Maybe<R>> f) {
+Maybe<T> GetOfElse(T : DefaultValue) {
 Maybe<T>.HasValue: f(T).value)) ? DefaultValue:
 }
 ```
+
+Esempio dell utilizzao dei maìonad
+```
+public Maybe<double> Divide (int nummeratore, int denomunitaore){
+donominatore == 0? returno Naybe.None : return Maybe.Sone( (double)numeratore/denominatore);
+}
+```
+Esempio di utilizzo delle funzioni Contenitore
+```
+Maybe<int> numero = new Maybe<int>.Some(5);
+// aggingo una funzione 
+Maybe<int> Reusult = numero.Map(x=>x+3);
+Consol.Writeline (Result.GetOrElse(10)) //output è 8
+```
+Utilizzo del bing
+```
+public record Pesona
+{
+  public int età {get, init}
+  public string nome {get,init}
+}
+
+maybe<Presona> Trova(string nome => nome=="Lucio")
+{
+//caso in cui riesce a trovare un record
+?Mayve<Persona>,HasValue? new Persone {name='Lucio', eta=24} : Maybe<Persona>.None
+}
+
 
