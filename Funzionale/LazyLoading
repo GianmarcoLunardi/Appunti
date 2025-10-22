@@ -1,6 +1,6 @@
 il termine fa riferimento al caricamento dei dati o informazione di input di una funzione.
 
-Leazy Loading è viene caricato un dato e valutato dalla prima all ultima funzione della catena, poi si estrae il successivo dato e si tipete
+
 Eager Loading, si riferisce alla concatenazione di un inseme di funzioni
 
 Supponendo di avere un moan x , un oggetto che contiene uno stato....ana collezione di oggetti.
@@ -13,10 +13,10 @@ x.g(x)
 x.h(x)
 
 x{x1,x2,x3}
-
+Leazy Loading è viene caricato un dato e valutato dalla prima all ultima funzione della catena, poi si estrae il successivo dato e si tipete
 tipo un foreach, viene estratto x1-> f(x1), g(x1), h(x1), f(x2),....h(x3)
 
-##Leazi Loading##
+###### Leazi Loading##
 Caricamento lento dei dati
 
 Data una collezione di dati 
@@ -32,9 +32,9 @@ var input = new[]
 
 Estrae un dato alla volta dalla collezione tipo un ciclo foreach
 
-var output = input.Select(x => DoSomethingOne(x))
-                  .Select(x => DoSomethingTwo(x))
-                  .Select(x => DoSomethingThree(x));
+var output = input.Select(x => f(x))
+                  .Select(x => g(x))
+                  .Select(x => h(x));
 Fornendo queste chiamate sullo steck
 
 18/08/1982 11:24:00 - DoSomethingOne(75)
@@ -48,18 +48,18 @@ Fornendo queste chiamate sullo steck
 18/08/1982 11:24:08 - DoSomethingThree(36)
 
 
+##### EagherLoading
 
+8 var temp1 = input.Select(x => f(x)).ToArray();
+9 var temp2 = input.Select(x => g(x)).ToArray();
+10 var finalAnswer = input.h(x => DoSomethingThree(x)).ToArray();
 
-8 var temp1 = input.Select(x => DoSomethingOne(x)).ToArray();
-9 var temp2 = input.Select(x => DoSomethingTwo(x)).ToArray();
-10 var finalAnswer = input.Select(x => DoSomethingThree(x)).ToArray();
-
-18/08/1982 11:24:00 - DoSomethingOne(75)
-18/08/1982 11:24:01 - DoSomethingOne(22)
-18/08/1982 11:24:02 - DoSomethingOne(36)
-18/08/1982 11:24:03 - DoSomethingTwo(75)
-18/08/1982 11:24:04 - DoSomethingTwo(22)
-18/08/1982 11:24:05 - DoSomethingTwo(36)
+18/08/1982 11:24:00 - f(75)
+18/08/1982 11:24:01 - f(22)
+18/08/1982 11:24:02 - f(36)
+18/08/1982 11:24:03 - g(75)
+18/08/1982 11:24:04 - g(22)
+18/08/1982 11:24:05 - g(36)
 18/08/1982 11:24:06 - DoSomethingThree(75)
 18/08/1982 11:24:07 - DoSomethingThree(22)
 18/08/1982 11:24:08 - DoSomethingThree(36)
