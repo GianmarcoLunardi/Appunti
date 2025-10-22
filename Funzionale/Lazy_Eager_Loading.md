@@ -37,22 +37,22 @@ var output = input.Select(x => f(x))
                   .Select(x => h(x));
 Fornendo queste chiamate sullo steck
 
-18/08/1982 11:24:00 - DoSomethingOne(75)
-18/08/1982 11:24:01 - DoSomethingTwo(75)
-18/08/1982 11:24:02 - DoSomethingThree(75)
-18/08/1982 11:24:03 - DoSomethingOne(22)
-18/08/1982 11:24:04 - DoSomethingTwo(22)
-18/08/1982 11:24:05 - DoSomethingThree(22)
-18/08/1982 11:24:06 - DoSomethingOne(36)
-18/08/1982 11:24:07 - DoSomethingTwo(36)
-18/08/1982 11:24:08 - DoSomethingThree(36)
+18/08/1982 11:24:00 - f(75)
+18/08/1982 11:24:01 - g(75)
+18/08/1982 11:24:02 - h(75)
+18/08/1982 11:24:03 - f(22)
+18/08/1982 11:24:04 - g(22)
+18/08/1982 11:24:05 - h(22)
+18/08/1982 11:24:06 - f(36)
+18/08/1982 11:24:07 - g(36)
+18/08/1982 11:24:08 - h(36)
 
 
 ##### EagherLoading
 
 8 var temp1 = input.Select(x => f(x)).ToArray();
 9 var temp2 = input.Select(x => g(x)).ToArray();
-10 var finalAnswer = input.h(x => DoSomethingThree(x)).ToArray();
+10 var finalAnswer = input.h(x => h(x)).ToArray();
 
 18/08/1982 11:24:00 - f(75)
 18/08/1982 11:24:01 - f(22)
