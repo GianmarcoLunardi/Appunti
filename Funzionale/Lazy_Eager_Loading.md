@@ -6,37 +6,38 @@ Eager Loading, si riferisce alla concatenazione di un inseme di funzioni
 Supponendo di avere un moan x , un oggetto che contiene uno stato....ana collezione di oggetti.
 
 con la notazione:
-x.f(x).g(x).f(x) equivale
+x.f(x).g(x).h(x) equivale
 
 x.f(x)
 x.g(x)
 x.h(x)
 
 x{x1,x2,x3}
+
 Leazy Loading è viene caricato un dato e valutato dalla prima all ultima funzione della catena, poi si estrae il successivo dato e si tipete
 tipo un foreach, viene estratto x1-> f(x1), g(x1), h(x1), f(x2),....h(x3)
 
-###### Leazi Loading##
+##### Leazi Loading
 Caricamento lento dei dati
 
 Data una collezione di dati 
 
-'
+```
 var input = new[]
 {
     75,
     22,
     36
 };
-'
+```
 
 Estrae un dato alla volta dalla collezione tipo un ciclo foreach
-
+```
 var output = input.Select(x => f(x))
                   .Select(x => g(x))
                   .Select(x => h(x));
 Fornendo queste chiamate sullo steck
-
+```
 18/08/1982 11:24:00 - f(75)
 18/08/1982 11:24:01 - g(75)
 18/08/1982 11:24:02 - h(75)
@@ -48,7 +49,7 @@ Fornendo queste chiamate sullo steck
 18/08/1982 11:24:08 - h(36)
 
 
-##### EagherLoading
+#### EagherLoading
 
 8 var temp1 = input.Select(x => f(x)).ToArray();
 9 var temp2 = input.Select(x => g(x)).ToArray();
