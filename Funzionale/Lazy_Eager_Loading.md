@@ -1,7 +1,7 @@
 il termine fa riferimento al caricamento dei dati o informazione di input di una funzione.
 
 
-Eager Loading, si riferisce alla concatenazione di un inseme di funzioni
+# Eager Loading, si riferisce alla concatenazione di un inseme di funzioni
 
 Supponendo di avere un moan x , un oggetto che contiene uno stato....ana collezione di oggetti.
 
