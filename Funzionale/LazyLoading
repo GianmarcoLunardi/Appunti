@@ -1,3 +1,24 @@
+Leazy Loading è la valutazione di un esperessione solo al momneto un cui viene chiamata
+Eager Loading, si riferisce alla concatenazione di un inseme di funzioni
+
+Supponendo di avere un moan x , un oggetto che sala lo stato 
+
+ES:
+
+S0 lo stato inziziale
+
+Leazi Loading
+S0.f().g().h(); 
+f(g(h(So)));
+
+Nel caso Eager
+h(g(f(S0)))
+
+
+
+
+
+
 Caricamento lento dei dati
 
 Data una collezione di dati 
