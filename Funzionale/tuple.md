@@ -1,6 +1,6 @@
 **Tuple**
 
-Esempio di dichiarazione di una tupla
+Esempio di dichiarazione di una tupla, per definizione è __ummutabule__
 
 `
 (int count, string Status) t = (Count: 5, Status: "OK");
