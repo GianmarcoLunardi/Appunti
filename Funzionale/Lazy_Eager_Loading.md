@@ -17,7 +17,7 @@ x{x1,x2,x3}
 Leazy Loading è viene caricato un dato e valutato dalla prima all ultima funzione della catena, poi si estrae il successivo dato e si tipete
 tipo un foreach, viene estratto x1-> f(x1), g(x1), h(x1), f(x2),....h(x3)
 
-##### Leazi Loading
+# Leazi Loading
 Caricamento lento dei dati
 
 Data una collezione di dati 
