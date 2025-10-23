@@ -9,8 +9,9 @@ Operazioni Asyncrone :
 Task<T>
 I nullable
 Maybe<T> , Nullable<T>, ....
+dove si può applicare la map
 Collezioni
-IEnumerable<T>
+IEnumerable<T> Dove si può applicare .select
 
 Struttura dei contenitori
 
@@ -41,6 +42,8 @@ if contenitore.HasValue then Console.WriteLine(Contenitore.value);
 
 Agiunta di altre metodi 
 Funzione map Map: C<T> ->  C<R>   dove  R=f(T)
+La funzione map funziona su monad che contengono singoli oggetti
+La funzione select si può applicare su Ienumerable
 Questa funzione consente di avere altri contenitori, o meglio la concatenazione di funzioni
 ```
 Maybe<T> Map(FUNCT<T,Maybe<R>> f) {
