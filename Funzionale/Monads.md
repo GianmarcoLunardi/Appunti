@@ -100,4 +100,4 @@ string personName="john";
 Funct<int,int> aggiunge_uno = (p=p+1);
 
 Per Monads composti da collezioni IEnumerable 
-si usa la funzione Select() che ha effetto simile al mapping
+si usa la funzione Select() che ha effetto simile al mapping  Esempio: [Funzionale/IEnumerable.md](./IEnumerable.md)  Funzionale/IEnumerable.md
