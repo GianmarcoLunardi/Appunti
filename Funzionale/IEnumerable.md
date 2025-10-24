@@ -1,18 +1,36 @@
+# IEnumerable<T>
+Un Monad che contiene una collezione di oggetti.
+
+##Concatenamento di funzioni Chaining
+consiste nell'applicare più funzioni consecutivamente su una collezione di dati
+```
+IEnumerable<T> x ={x1,x2,x3}
+
+m.f();
+m.g();
+m.h();
+//Risulta molto più leggibile 
+m.f().g().h();
+```
+
+ 
+## Lazy Loading
 il termine fa riferimento al caricamento dei dati o informazione di input di una funzione.
+Dove input dati può ossere un db, un file ma anche un IColletion
 
-
-# Eager Loading, si riferisce alla concatenazione di un inseme di funzioni
-
-Supponendo di avere un moan x , un oggetto che contiene uno stato....ana collezione di oggetti.
-
-con la notazione:
-x.f(x).g(x).h(x) equivale
-
-x.f(x)
-x.g(x)
-x.h(x)
-
-x{x1,x2,x3}
+si carica un elemento alla volta e si fa elaborare a tutte le funzioni della catena
+```
+x1 ->f(x1).g(x1).h(x1);
+x2 ->f(x2).g(x2).h(x2);
+x3 ->f(x3).g(x3).h(x3);
+```
+# Eager Loading, 
+Supponendo di avere un IEnumerable 
+```
+x1 ->f(x1).g(x2).h(x3);
+x2 ->f(x2).g(x2).h(x3);
+x3 ->f(x1).g(x3).h(x3);
+```
 
 Leazy Loading è viene caricato un dato e valutato dalla prima all ultima funzione della catena, poi si estrae il successivo dato e si tipete
 tipo un foreach, viene estratto x1-> f(x1), g(x1), h(x1), f(x2),....h(x3)
