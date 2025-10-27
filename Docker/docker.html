@@ -52,8 +52,24 @@ Docker ha la possibilitò di utilizzare un interfaccia grafica per avviare, mett
 
 
   ## Altri comando Docker Cli
+```
+    docker run docker/whale cawsay Ciao
+```
+    viene lancata l iammagine docker/whale, viene lanciato il programma sawsay e al programma viene passata la stringa Ciao
+```
+    docker run -p 8080:80 nginx
+```
+    si apre explorer sulla porta 80 con local host , viene fatta una richiesta al webserver nginx
+```
+    docker ps -a
+```
+    viene fatta la lista delle immagini e il loro stato
 
-
+```
+    docker rm   00000000000000
+```
+ viene cancellato un containe con id 00000000   
+    
 <!--
 Indirizzo url
 https://gianmarcolunardi.github.io/Appunti/Docker/docker.html#
