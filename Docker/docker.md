@@ -69,6 +69,11 @@ Docker ha la possibilitò di utilizzare un interfaccia grafica per avviare, mett
     docker rm   00000000000000
 ```
  viene cancellato un containe con id 00000000   
+
+ ```
+    docker start image
+```
+    viene avviata il file image
     
 <!--
 Indirizzo url
