@@ -17,8 +17,8 @@ dot publish --os linux --arch x64 /t:Nome_Container -c realise
 il comando genera un immagine , il cui nome sarà poi fornito a fine compilazione
 potrà essere letto dalla UI Docker local oppure *docker rum --name Nome_Container*
 
-** Annotazioni: nel caso si tratti di un api , con un unterfaccia swagger, si ricordi di cambire il file program.cs
+*Annotazioni: nel caso si tratti di un api , con un unterfaccia swagger, si ricordi di cambire il file program.cs
 in quanto per default viene avviato in versione Development , mente Docker avvia l applicazione in _production mode_
 
 Annotazione: UI Docker quando aore il brosware può generare pagina non trovata in quanto bosognerebbe configurare 
-url e la porta di accesso **
+url e la porta di accesso*
