@@ -1,5 +1,11 @@
 ** Metoto Per AL Gestione Errrori
 
+Librerie che lo omplementano
+
+FluentResults    Result<T>, e altri
+LanguageExt    Result<T>, Either<TLeft, TRight>, e molti altri.
+Optional    Optional<T> equivalente
+
 * Implrmentazione base
 Implementazione 
 
