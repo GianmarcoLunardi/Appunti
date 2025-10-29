@@ -95,9 +95,16 @@ maybe<Presona> Trova(string nome => nome=="Lucio")
 Mayve<Persona>.HasValue? new Persone {name='Lucio', eta=24} : Maybe<Persona>.None
 }
 ```
+
+[Result<T>()](Tresult<T>().md
+
+
+
+
 Esempio che utilizza tutte le funzioni studiate
 string personName="john";
 Funct<int,int> aggiunge_uno = (p=p+1);
 
 Per Monads composti da collezioni IEnumerable 
 si usa la funzione Select() che ha effetto simile al mapping  Esempio: [Funzionale/IEnumerable.md](./IEnumerable.md)  Funzionale/IEnumerable.md
+
