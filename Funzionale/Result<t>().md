@@ -1,4 +1,4 @@
-** Metoto Per AL Gestione Errrori
+** Metoto Per AL Gestione Errrorihttps://github.com/GianmarcoLunardi/Appunti/blob/main/Funzionale/Result%3Ct%3E().md
 
 Librerie che lo omplementano
 
@@ -33,11 +33,11 @@ public async Task<Result<bool>> DivisioneAsync(int a, int b)
 {
     if (b!=0)
     {
-        return __Result<bool>.Success(a/b);__
+        return __Prelude.Success(a/b);__
     }
    else
     {
-        return __Result<bool>.Failure("Errore");__
+        return _Prelude_.Failure("Errore");__
     };
 }
 ````
