@@ -1,0 +1,15 @@
+** Metoto Per AL Gestione Errrori
+
+````
+public async Task<Result<bool>> DivisioneAsync(int a, int b)
+{
+    if (b!=0)
+    {
+        return Result<bool>.Success(a/b);
+    }
+   else
+    {
+        return Result<bool>.Failure("Errore"e);
+    };
+}
+````
