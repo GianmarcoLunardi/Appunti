@@ -27,11 +27,11 @@ public async Task<Result<bool>> DivisioneAsync(int a, int b)
 {
     if (b!=0)
     {
-        return Result<bool>.Success(a/b);
+        return __Result<bool>.Success(a/b);__
     }
    else
     {
-        return Result<bool>.Failure("Errore"e);
+        return __Result<bool>.Failure("Errore");__
     };
 }
 ````
