@@ -1,4 +1,4 @@
-##Definizione di un Record
+## Definizione di un Record
 é immutabile, dichiarazione
 '''
 public record Persona(string Nome, int Età);
