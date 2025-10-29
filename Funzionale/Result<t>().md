@@ -7,9 +7,15 @@ LanguageExt    Result<T>, Either<TLeft, TRight>, e molti altri.
 Optional    Optional<T> equivalente
 
 * Implrmentazione base
-Implementazione 
+Implementazione
+
+è stata utilizzata la libreria LanguageExt
 
 ````
+using LanguageExt;
+using LanguageExt.Common;
+
+
 public class Result<T>
 {
     public bool IsSuccess { get; }
@@ -33,11 +39,12 @@ public async Task<Result<bool>> DivisioneAsync(int a, int b)
 {
     if (b!=0)
     {
-        return __Prelude.Success(a/b);__
+        //Utilizzare il Prelude per fare riferimento al ritorno della funzione
+        return **Prelude**.Success(a/b);
     }
    else
     {
-        return _Prelude_.Failure("Errore");__
+        return **Prelude**.Failure("Errore");
     };
 }
 ````
