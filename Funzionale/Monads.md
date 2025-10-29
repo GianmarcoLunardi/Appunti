@@ -96,7 +96,7 @@ Mayve<Persona>.HasValue? new Persone {name='Lucio', eta=24} : Maybe<Persona>.Non
 }
 ```
 
-[Result<T>()](Tresult<T>().md
+[Result<T>()](Tresult<T>().md)
 
 
 
