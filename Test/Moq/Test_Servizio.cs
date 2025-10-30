@@ -31,3 +31,16 @@ using NUnit.Framework;
  m.SendEmail("test@example.com", "Welcome!", "Welcome to our service!"), Times.Once); 
   // inoltre specifica che il servizio è stato chiamato una sola volta
  }
+** note:
+Il Moq può implementare più metodi 
+ mockEmailService.Setup(m => m.**SendEmail1**(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()))
+ .Returns(true);
+ mockEmailService.Setup(m => **m.SendEmail2**(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()))
+ .Returns(true);
+
+La Argomento è It. 
+It.IsAny<string>()  controllo sul tipo stringa
+(It.Is<string>(u => u.value == "Name1") controllo si tipo e valore
+
+Per metrodi asyncroni
+.ReturnsAsync()
