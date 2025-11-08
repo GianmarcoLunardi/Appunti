@@ -76,4 +76,9 @@ Monad.Match(
 );
 ````
 
+Per i tipi per valutare tutti i possibili tipi si utilizza il 
 
+.Match(
+        some : (x)=> x,
+        None : ()=> console.WriteLine("nulla");
+        )
