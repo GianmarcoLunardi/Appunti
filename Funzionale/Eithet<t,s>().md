@@ -1,4 +1,6 @@
-** Metoto Per AL Gestione Errrorihttps://github.com/GianmarcoLunardi/Appunti/blob/main/Funzionale/Result%3Ct%3E().md
+** Metoto Per AL Gestione Errrori
+[Vai alla pagina](https://github.com/GianmarcoLunardi/Appunti/blob/main/Funzionale/Either().md)
+
 
 Librerie che lo omplementano
 
