@@ -10,6 +10,6 @@ Dichiarare la funzione di alto livello
 ```
 Func<in T,out TResult>(T arg);
 
-Funct<int, string> funzione = ( x => console.writeln(x););
+Funct<int, string> funzione = ( int x ) => console.writeln(x);
 funzione(25); // Srtampa 25
-```
+````
