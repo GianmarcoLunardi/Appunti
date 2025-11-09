@@ -1,5 +1,5 @@
-**Monads**
-Sono dei contenitori in cui è racchiuso uno o più valore alla quale è possibile applicare una funzione
+**Strutture o Monads**
+Sono dei contenitori in cui è racchiuso __uno o più valori__ alla quale è possibile applicare una funzione
 **Rappresenta un'operazione asincrona che restituisce un valore**
 
 Es:
