@@ -1,3 +1,27 @@
+**Funzioni conposte
+Sono funzioni che si calcolano utilizzando il principio matematico del composto
+
+g(f(x)) , dove g(y) viene calcolata nel codomionio di f(x)
+
+```
+static string AbbreviateName(Person p) => Abbreviate(p.FirstName) + Abbreviate(p.LastName);
+
+//oppure 
+
+Func<Person, string> emailFor =
+p => AppendDomain(AbbreviateName(p));
+var joe = new Person("Joe", "Bloggs");
+var email = emailFor(joe);
+
+```
+
+** Concatenazione di metodi
+Sono un concatenarsi di setodi seguiti da .
+
+x.f(x).g(x)
+
+Nel contenitore x viene 
+
 Funzioni applicate su un monad che contiene un singolo valore
 
 using System;
