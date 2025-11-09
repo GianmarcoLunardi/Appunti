@@ -1,9 +1,8 @@
 **Strutture o Monads**
-Sono dei contenitori in cui è racchiuso __uno o più valori__ alla quale è possibile applicare una funzione
-**Rappresenta un'operazione asincrona che restituisce un valore**
+Sono dei contenitori in cui è racchiuso __uno o più valori__ 
 
-Es:
-Map: (C<T>, T->R) -> C<R>
+alla quale è possibile applicare una funzione
+**Rappresenta un'operazione asincrona che restituisce un valore**
 
 Sono monad
 Operazioni Asyncrone :
@@ -14,10 +13,37 @@ dove si può applicare la map
 Collezioni
 IEnumerable<T> Dove si può applicare .select
 
+.Map
+Map: (C<T>, T->R) -> C<R>    dove C<T> indica una struttra generica, contenitore, moan
+
+E' una funzione che può essere associata a una struttura di un singolo valore esempio Option<T> oppure IEnumerable<T>.
+Map è una funzione che viene applicata al dominio (valore, Valori> e restitutisce un codomio che contiene i valori f(x).
+Select(f(x)) è un sinonimo che vale colo su collezioni, mentre Map può essere associata anche a singoli valori.
+
+
+Es:
+(Option<T>, (T -> R)) -> Option<R>        Map f(x) applicato a Option<T> ha come risultato
+
+None       se Option<T> è none
+f(Some)    se Option<T> contiene un valore
+
+Es2:
+Caso di una collezione ha funziona equivalentemente a .Select
+
+
+** Funzione Binding 
+
+prende una funzione la applica ai volori del contenitore, ottine il codominio del valore primitivo
+Map: (C<T>, T->R) -> R    dove C<T> rispetto a Map non restituisce C<R>
+
+
+
+
+
+
 Struttura dei contenitori
 
 Funzione Return: prende un (o più valorei) tipo primitivo e lo incapsula dentro un contenitore
-Funzione Binding : prende una funzione la applica ai volori del contenitore, ottine un nuovo contenitore con i valori del codominio
 
 Pricipi:
 Associativo, se abbiamo una catena di funzioni annidate appplicate a un contenitore, qualunque si l  ordine di easecuzioni il risualtato non cambia
@@ -39,7 +65,7 @@ Maybe<int> contenitore = new Maybe<int>(5);
 if contenitore.HasValue then Console.WriteLine(Contenitore.value);
 ```
 
-
+La discussione continua a pagina 95
 
 Agiunta di altre metodi 
 Funzione map Map: C<T> ->  C<R>   dove  R=f(T)
