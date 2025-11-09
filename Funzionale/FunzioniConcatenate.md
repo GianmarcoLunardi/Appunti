@@ -1,10 +1,15 @@
 **Funzioni conposte
-Sono funzioni che si calcolano utilizzando il principio matematico del composto
 
-g(f(x)) , dove g(y) viene calcolata nel codomionio di f(x)
+Date due funzioni f e g, si può definire una funzione h come la composizione di queste due funzioni, annotata come segue:
+
+h = f • g
+
+Applicare h a un valore x è lo stesso che applicare g a quello stesso valore x per ottenere un risultato intermedio, e poi applicare f a quel risultato intermedio. Ovvero:
+
+h(x) = (f • g)(x) = f(g(x))
 
 ```
-static string AbbreviateName(Person p) => Abbreviate(p.FirstName) + Abbreviate(p.LastName);
+// si vuole calcolare l indirizzo email delle persone che lavorano in una libreria
 
 //oppure 
 
@@ -18,9 +23,7 @@ var email = emailFor(joe);
 ** Concatenazione di metodi
 Sono un concatenarsi di setodi seguiti da .
 
-x.f(x).g(x)
-
-Nel contenitore x viene 
+x.f(x).g(x) vengono eseguite nel ordine f,g,h ciò ne consente una maggiore visibilità nella lettura
 
 Funzioni applicate su un monad che contiene un singolo valore
 
