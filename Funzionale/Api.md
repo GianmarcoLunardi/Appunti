@@ -19,6 +19,6 @@ public class InstrumentsController : Controller
 ```
 
 Al fine di gestire meglio dipi di dato che descrivono gli errori
-Either<L, R>    Right Left L
+Either<L, R>    Right Left L <br>
 Validation<T>   Valid Invalid IEnumerable<Error>
 Exceptional<T>  Success Exception Exception
