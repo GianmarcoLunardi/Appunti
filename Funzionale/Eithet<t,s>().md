@@ -58,7 +58,7 @@ using LanguageExt;
 using LanguageExt.Common; // se usi Error
 using static LanguageExt.Prelude; // Left(...), Right(...), Some(...), ecc.
 
-Either<L, R>: come Result ma con tipo di errore personalizzato L (Result usa Error come L)
+Either<L, R>: Può restituire un errore con tipo personalizzato  L (Result usa Error come L)
 Il moan può assumere il valore Left, o il valore Rigth
 ````
 using LanguageExt;
@@ -79,6 +79,7 @@ Monad.Match(
 Per i tipi per valutare tutti i possibili tipi si utilizza il 
 
 .Match(
-        some : (x)=> x,
-        None : ()=> console.WriteLine("nulla");
+        Left : (x)=> x,
+        Right : ()=> console.WriteLine("nulla");
         )
+Come da convenzione il rigth è il valore giusto e il left è l errore.
