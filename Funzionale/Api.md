@@ -1,4 +1,4 @@
-**Creare un api in modo funzionale
+** Creare un api in modo funzionale
 problea: Dato un codice , si deve fare un action che restitutisca i dettogli del prodotto 
 
 ```
@@ -18,7 +18,7 @@ public class InstrumentsController : Controller
 }
 ```
 
-Al fine di gestire meglio dipi di dato che descrivono gli errori
-Either<L, R>    Right Left L <br>
-Validation<T>   Valid Invalid IEnumerable<Error>
-Exceptional<T>  Success Exception Exception
+Al fine di gestire meglio dipi di dato che descrivono gli errori <br>
+Either<L, R>    Right  Left L <br>
+Validation<T>   Valid Invalid IEnumerable<Error><br>
+Exceptional<T>  Success Exception Exception<br>
