@@ -1,0 +1,12 @@
+** Option<T>
+
+Offre un valore immutabile che può avere un valore oppure un none.
+è una struct (classe non ereditabile) di tipo static quindi si instanziano senza l utilizzo del new
+i costruttori sono di tipo readonly quindi possono essere utilizzati solo all instanzazione
+
+Esenpio :
+
+Option<int> x = Option<int>.None
+La classe statica, e viene utilizzato il metodo none come costruttore
+Oppure 
+Option<int> x = Option<int>.Some(10);
