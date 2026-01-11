@@ -9,10 +9,10 @@ Esempio :
 
 using LanguageExt
 
-Option<int> x = Option<int>.None
+Option<int> x1 = Option<int>.None
 La classe statica, e viene utilizzato il metodo none come costruttore
 Oppure 
-Option<int> x = Option<int>.Some(10);
+Option<int> x2 = Option<int>.Some(10);
 
 Esiste un simile
 using Functional.Maybe
