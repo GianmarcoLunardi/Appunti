@@ -1,4 +1,12 @@
 # IEnumerable<T>
+Utilizzando il metodo collezione.Where (x=>x) se non trova nessun valore ritorna una lista vuota
+
+```
+public IEnumerable<string> GetNomi()
+{   // valore della lista vuota senza lelemeneti
+    return Enumerable.Empty<string>();
+}
+```
 Un Monad che contiene una collezione di oggetti.
 
 ##Concatenamento di funzioni Chaining
