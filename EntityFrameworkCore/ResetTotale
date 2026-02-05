@@ -1,0 +1,8 @@
+* caso in cui si cambia pc con cui si sta programmando 
+1) si clona il progetto github del codice
+2) Si cancellano tutte le migrazioni del precedente db
+3) Su my esql si controlla che non vi sia un db uguale a quello che poi verrà generato 
+4) Si crea una nuova migrazione
+5) Si fà l' aggiornamento dotnet ef database update
+
+6) eventualmnete si contolla eventuali errori di transazione ef tipo cocli ecc ecc
