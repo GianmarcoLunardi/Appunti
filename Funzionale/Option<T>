@@ -1,5 +1,10 @@
 ** Option<T>
+oppure Maybe<T>()
 
+Diepende dalla libreria che si usa
+
+LanguageExt
+Functional.Maybe
 
 Offre un valore immutabile che può avere un valore oppure un none.
 è una struct (classe non ereditabile) di tipo static quindi si instanziano senza l utilizzo del new
@@ -17,3 +22,23 @@ Option<int> x2 = Option<int>.Some(10);
 Esiste un simile
 using Functional.Maybe
 Esiste un quivalente Maybe<T> 
+
+** Un valore Option<T> ha le seguenti proprietà:
+-IsSome
+-IsNome
+-Match
+
+Match(
+() => "Dear Subscriber,",
+(name) => $"Dear {name.ToUpper()},");
+
+Esempio di utilizzio dell option per un API Ricerca
+
+Lookup : (NameValueCollection, string) -> Option<string>
+
+public static Option<string> Lookup
+(this NameValueCollection @this, string key)
+=> @this[key];
+
+
+
