@@ -24,8 +24,7 @@ public string Autore { get; init; }, ecc.
 ```
 
 # Tupla/Record
-La tupla rispetto al record è un tipo anonimo
-```
+La tupla rispetto al record è un tipo anonimo, inolte è mutabile
 
 ```csharp
 (string Nome, int Anni) OttieniDatiSemplici()
@@ -36,3 +35,4 @@ La tupla rispetto al record è un tipo anonimo
 // Utilizzo
 var utente = OttieniDatiSemplici();
 Console.WriteLine($"{utente.Nome} ha {utente.Anni} anni.");
+```
