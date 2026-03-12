@@ -1,8 +1,8 @@
 ## Definizione di un Record
 é immutabile, dichiarazione
-'''
+'
 public record Persona(string Nome, int Età);
-'''
+'
 Creazione di un'Istanza
 '''
 var persona1 = new Persona("Mario", 30);
