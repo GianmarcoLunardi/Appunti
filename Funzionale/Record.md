@@ -16,3 +16,8 @@ var persona2 = new Persona("Mario", 30);
 '''
 bool sonoUguali = persona1 == persona2; // true
 '''
+# Utilizzo di sintassi posizionale 
+class TipoRecord {
+public string Titolo { get; init; }
+public string Autore { get; init; }, ecc.
+}
