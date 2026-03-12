@@ -20,3 +20,15 @@ class TipoRecord {
 public string Titolo { get; init; }
 public string Autore { get; init; }, ecc.
 }
+# Tupla/Record
+La tupla rispetto al record è un tipo anonimo
+`
+(string Nome, int Anni) OttieniDatiSemplici()
+{
+    return ("Marco", 28);
+}
+
+// Utilizzo
+var utente = OttieniDatiSemplici();
+Console.WriteLine($"{utente.Nome} ha {utente.Anni} anni.");
+`
