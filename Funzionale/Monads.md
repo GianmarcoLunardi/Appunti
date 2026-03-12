@@ -1,8 +1,7 @@
-**Strutture o Monads**
-Sono dei contenitori in cui è racchiuso __uno o più valori__ 
+##Strutture o Monads
+Sono dei contenitori in cui è racchiuso __uno o collezioni__ 
 
-alla quale è possibile applicare una funzione
-**Rappresenta un'operazione asincrona che restituisce un valore**
+**ci cono associate delle funzioni che rappresentano funzioni asincrone**
 
 Sono monad
 Operazioni Asyncrone :
@@ -11,10 +10,12 @@ I nullable
 Maybe<T> , Nullable<T>, ....
 dove si può applicare la map
 Collezioni
+
+# Esempio di funzioni associate
 IEnumerable<T> Dove si può applicare .select
 
 .Map
-Map: (C<T>, T->R) -> C<R>    dove C<T> indica una struttra generica, contenitore, moan
+Map: (C<T>, T->R) -> C<R>    dove C<T> indica una struttra generica, t->r una funzione che va dai valori di T a R
 
 E' una funzione che può essere associata a una struttura di un singolo valore esempio Option<T> oppure IEnumerable<T>.
 Map è una funzione che viene applicata al dominio (valore, Valori> e restitutisce un codomio che contiene i valori f(x).
