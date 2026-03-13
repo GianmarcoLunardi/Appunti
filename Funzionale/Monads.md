@@ -1,5 +1,5 @@
 ##Strutture o Monads
-Sono dei contenitori in cui è racchiuso __uno o collezioni__ 
+contenitore (un wrapper) per un _valore o collezione_. Questo contenitore non si limita a tenere il valore, ma definisce delle regole su come elaborarlo.
 
 **ci cono associate delle funzioni che rappresentano funzioni asincrone**
 
@@ -15,7 +15,23 @@ Collezioni
 IEnumerable<T> Dove si può applicare .select
 
 .Map
+prende un valore all'interno di un contenitore, gli applica una funzione e rimette il risultato in un contenitore dello stesso tipo.
+
 Map: (C<T>, T->R) -> C<R>    dove C<T> indica una struttra generica, t->r una funzione che va dai valori di T a R
+.bind
+si usa quando la funzione di trasformazione restituisce già un contenitore. Se usassi Map in questo caso, ti ritroveresti con un contenitore dentro un altro contenitore (es. List<List<int>>). Bind applica la funzione e poi "appiattisce" il risultato.
+Bind: F<A> -> (A -> F<B>) -> F<B>  //modifica si il contenitore che il valore esterno
+
+Esempio: Ogni utente ha una lista di numeri di telefono. Vuoi un'unica lista di tutti i numeri di telefono di tutti gli utenti.
+
+```csharp
+var utenti = new List<Utente> { utente1, utente2 };
+// Bind (SelectMany) evita di creare una List<List<string>>
+var tuttiITelefoni = utenti.SelectMany(u => u.NumeriDiTelefono);
+// Risultato: { "123", "456", "789" } -> Una lista piatta di stringh
+```
+
+
 
 E' una funzione che può essere associata a una struttura di un singolo valore esempio Option<T> oppure IEnumerable<T>.
 Map è una funzione che viene applicata al dominio (valore, Valori> e restitutisce un codomio che contiene i valori f(x).
@@ -36,6 +52,8 @@ Caso di una collezione ha funziona equivalentemente a .Select
 
 prende una funzione la applica ai volori del contenitore, ottine il codominio del valore primitivo
 Map: (C<T>, T->R) -> R    dove C<T> rispetto a Map non restituisce C<R>
+Esempio : ho una collezione di numeri gli applico una funzione (x)->x*2 ottine un altra collezione ce contiene il doppio dei valori.
+Bind: (M<T>,T -> M<U>)-> M<U> applica una funzione T -> M<U>, e restituisce .
 
 
 
