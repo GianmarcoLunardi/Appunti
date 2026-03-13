@@ -4,9 +4,9 @@
 
 Librerie che lo omplementano
 
-FluentResults    Result<T>, e altri
-LanguageExt    Option<T>, Either<TLeft, TRight>, e molti altri.
-Optional    Optional<T> equivalente
+LanguageExt    Option<T>, 
+Funcky,LanguageExt Either<TLeft, TRight>, e molti altri.
+
 
 * Implrmentazione base
 Implementazione
@@ -85,3 +85,22 @@ Per i tipi per valutare tutti i possibili tipi si utilizza il
         )
 Come da convenzione il rigth è il valore giusto e il left è l errore.
 ```
+## Nullable<T>
+dichiarazioni
+
+```csharp
+int? numero = null;
+Nullable<int> numero = null;
+// possibile utilizzo
+
+if (numero.HasValue)
+{
+    Console.WriteLine(numero.Value);
+}
+// vi anche uno speciale operatore che assegna un valore nel caso dia null
+int risultato = numero ?? 0;
+```
+
+
+
+
