@@ -1,6 +1,8 @@
-**Immutabile**
+## Immutabile
 Concetto di immutabile un oggetto può essere inizializzato solo al momento della sui inizialilizzazhone tramite il costruttore
-'public class ClassA
+
+```csharp
+public class ClassA
 {
 public string PropA { get; private set; }
 public int PropB { get; private set; }
@@ -22,11 +24,13 @@ this.PropE = propE;
 this.PropF = propF
 }
 }'
+```
+
 
 Es:
 
 
-**Concetto di funzione di alto livello**
+## Concetto di funzione di alto livello
 Func<T,TResult>
 
 è una funzione che oltre calcolare un valore può essere assegnata come variabile
