@@ -78,7 +78,7 @@ Monad.Match(
 ````
 
 Per i tipi per valutare tutti i possibili tipi si utilizza il 
-
+```csharp
 .Match(
         Left : (x)=> x,
         Right : ()=> console.WriteLine("nulla");
