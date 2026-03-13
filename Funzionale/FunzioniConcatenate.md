@@ -20,8 +20,8 @@ var email = emailFor(joe);
 
 ```
 
-** Concatenazione di metodi
-Sono un concatenarsi di setodi seguiti da .
+##Concatenazione di metodi
+in un monade o wrapper è il concatenarsi di funzioni seguiti da .
 
 x.f(x).g(x) vengono eseguite nel ordine f,g,h ciò ne consente una maggiore visibilità nella lettura
 
