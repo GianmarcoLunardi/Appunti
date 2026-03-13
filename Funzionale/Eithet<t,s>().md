@@ -1,4 +1,4 @@
-** Metoto Per AL Gestione Errrori
+** Metodi Per la Gestione Errrori
 [Vai alla pagina](https://github.com/GianmarcoLunardi/Appunti/blob/main/Funzionale/Either().md)
 
 
@@ -13,8 +13,7 @@ Implementazione
 
 è stata utilizzata la libreria LanguageExt
 
-````
-using LanguageExt;
+```csharp
 using LanguageExt.Common;
 
 
@@ -34,9 +33,7 @@ public class Option<T>
     **public static Option<T> Some(T) value)** => new Result<T>(true, value, null);
     **public static Result<T> None() new Result<T>(false, default(T), error);
 }
-````
 
-````
 public async Task<Result<bool>> DivisioneAsync(int a, int b)
 {
     if (b!=0)
@@ -50,10 +47,12 @@ public async Task<Result<bool>> DivisioneAsync(int a, int b)
     };
 }
 ````
+
 un altro tipo che può essere usato è either , che restituisce due tipi di dato
 in caso di successo restituisce un tipo L in caso di errore può restituire un tipo di oggetto R personalizzato
 
 **Either<L, R>:
+```csharp
 using LanguageExt;
 using LanguageExt.Common; // se usi Error
 using static LanguageExt.Prelude; // Left(...), Right(...), Some(...), ecc.
@@ -61,6 +60,8 @@ using static LanguageExt.Prelude; // Left(...), Right(...), Some(...), ecc.
 Either<L, R>: Può restituire un errore con tipo personalizzato  L (Result usa Error come L)
 Il moan può assumere il valore Left, o il valore Rigth
 ````
+
+```csharp
 using LanguageExt;
 
 Either<int, int> Monad;
@@ -83,3 +84,4 @@ Per i tipi per valutare tutti i possibili tipi si utilizza il
         Right : ()=> console.WriteLine("nulla");
         )
 Come da convenzione il rigth è il valore giusto e il left è l errore.
+```
