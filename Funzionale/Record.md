@@ -37,8 +37,20 @@ var p2 = p1 with { Cognome = "Bianchi" };
 
 
 ## Ereditarietà Fra record
-Sue record sono uguali se hanno il _solito tipo concreto uguale_ cioèhanno i soliti attributi
-## Metodi e fuzioni sui dati
+*** I dati gerarchi sono i dati che hanno una struttura a albero che i dati figli derivano dai dati padri
+*** Questo conetto viene espresso con l ereditarietà
+Sue record sono uguali se hanno il _solito tipo concreto uguale_ cioè hanno i soliti attributi
+Organizzando dati in modo cerarchico si evita di utilizzare il null
+Esempio:
+```csharp
+public abstract record Messaggio;
+public record MessaggioTesto(string Contenuto) : Messaggio;
+public record MessaggioImmagine(string Url) : Messaggio;
+public record MessaggioErrore(string Errore) : Messaggio;
+```
+In questo caso un messaggio di testo non può avere un url, un messaggio d errore, non può avere un contenuto.
+
+## Metodi e funzioni sui dati
 può avere metodi di istanza, metodi statici, proprietà calcolate, costruttori, override… tutto.
 
 public record Persona(string Nome, string Cognome)
