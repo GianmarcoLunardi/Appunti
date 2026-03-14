@@ -49,6 +49,19 @@ public record MessaggioImmagine(string Url) : Messaggio;
 public record MessaggioErrore(string Errore) : Messaggio;
 ```
 In questo caso un messaggio di testo non può avere un url, un messaggio d errore, non può avere un contenuto.
+**  pattern matching
+Consente di riconoscere il tipo di dato e estrarrere i relativi campi associati
+```csharp
+Messaggio m = new MessaggioImmagine("foto.png");
+
+var risultato = m switch
+{
+    MessaggioTesto t      => $"Testo: {t.Contenuto}",
+    MessaggioImmagine i   => $"Immagine: {i.Url}",
+    MessaggioErrore e     => $"Errore: {e.Errore}"
+};
+```
+
 
 ## Metodi e funzioni sui dati
 può avere metodi di istanza, metodi statici, proprietà calcolate, costruttori, override… tutto.
