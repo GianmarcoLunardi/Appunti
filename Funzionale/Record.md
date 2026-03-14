@@ -1,6 +1,7 @@
 ## Definizione di un Record
 é immutabile, dichiarazione
 ```csharp
+// Dichiarazione di valori posizionali
 public record Persona(string Nome, int Età);
 ```
 Creazione di un'Istanza
@@ -17,6 +18,7 @@ bool sonoUguali = persona1 == persona2; // true
 
 # Utilizzo di sintassi posizionale 
 ```csharp
+// record con valori non posizionali
 class TipoRecord {
 public string Titolo { get; init; }
 public string Autore { get; init; }, ecc.
