@@ -24,6 +24,15 @@ public string Titolo { get; init; }
 public string Autore { get; init; }, ecc.
 }
 ```
+## Instanza di un nuovo record
+// nuovo record
+var p1 = new Persona("Mario", "Rossi");
+// Instanzia nuovamente un record esistente
+var p1 = new Persona("Mario", "Rossi");
+var p2 = p1 with { Cognome = "Bianchi" };
+
+
+
 
 ## Ereditarietà Fra record
 Sue record sono uguali se hanno il _solito tipo concreto uguale_ cioèhanno i soliti attributi
