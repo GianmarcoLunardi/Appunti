@@ -25,8 +25,20 @@ public string Autore { get; init; }, ecc.
 }
 ```
 
+## Ereditarietà Fra record
+Sue record sono uguali se hanno il _solito tipo concreto uguale_ cioèhanno i soliti attributi
+## Metodi e fuzioni sui dati
+può avere metodi di istanza, metodi statici, proprietà calcolate, costruttori, override… tutto.
+
+public record Persona(string Nome, string Cognome)
+{
+    public string NomeCompleto() => $"{Nome} {Cognome}";
+}
+
+```csharp
 # Tupla/Record
 La tupla rispetto al record è un tipo anonimo, inolte è mutabile
+```
 
 ```csharp
 (string Nome, int Anni) OttieniDatiSemplici()
