@@ -35,6 +35,12 @@ public record Persona(string Nome, string Cognome)
     public string NomeCompleto() => $"{Nome} {Cognome}";
 }
 
+public record Punto(int X, int Y)
+{
+    public static Punto operator +(Punto a, Punto b)
+        => new(a.X + b.X, a.Y + b.Y);
+}
+
 ```csharp
 # Tupla/Record
 La tupla rispetto al record è un tipo anonimo, inolte è mutabile
