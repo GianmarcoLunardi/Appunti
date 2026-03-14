@@ -10,6 +10,8 @@ var persona1 = new Persona("Mario", 30);
 var persona2 = new Persona("Giulia", 25);
 ```
 # Eguaglianza per Valore
+due record sono uguali quando tutte le loro proprietà hanno gli stessi valori
+
 ```csharp
 var persona1 = new Persona("Mario", 30);
 var persona2 = new Persona("Mario", 30);
