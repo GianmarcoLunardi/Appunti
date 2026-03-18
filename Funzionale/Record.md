@@ -9,9 +9,19 @@ Creazione di un'Istanza
 var persona1 = new Persona("Mario", 30);
 var persona2 = new Persona("Giulia", 25);
 ```
+## Aggiornamento di una repository con i record
+```csharp
+// 1. Recupero il record originale
+var clienteEsistente = repository.GetById(1);
+
+// 2. Creo una copia aggiornata
+var clienteAggiornato = clienteEsistente with { Email = "nuova.email@esempio.it" };
+
+// 3. Salvo il nuovo stato
+repository.Update(clienteAggiornato);
 # Eguaglianza per Valore
 due record sono uguali quando tutte le loro proprietà hanno gli stessi valori
-
+```
 ```csharp
 var persona1 = new Persona("Mario", 30);
 var persona2 = new Persona("Mario", 30);
