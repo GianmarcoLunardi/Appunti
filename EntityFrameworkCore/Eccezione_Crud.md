@@ -1,7 +1,24 @@
 ## Gestire le eccezioni in modo funzionale
-
-'''CSharp
+Durante le chiamate a un database posso generarsi delle eccezione che possono bloccare l intero sosistema
+_Exceptional_ la struttura consente sia di fornire un valore , si si fornire l eccezione generata senza l interruzione
 In questo approccio, se SaveChanges() fallisce, EF Core lancia una DbUpdateException. Il programmatore deve catturarla manualmente.
+'''CSharp
+// Trasformiamo un'operazione che "esplode" in una funzione onesta
+public Exceptional<Unit> SaveToDb(User user)
+{
+    try 
+    {
+        _context.Users.Add(user);
+        _context.SaveChanges(); // Qui può scattare un'eccezione
+        return unit; // Successo (valore vuoto funzionale)
+    }
+    catch (Exception ex) 
+    { 
+        return ex; // L'eccezione viene restituita come dato, non lanciata [4]
+    }
+}
+'''
+
 public void InserisciUtente(User nuovoUtente)
 {
     try
