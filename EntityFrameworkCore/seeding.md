@@ -3,12 +3,12 @@
 
   Caso in cui si voglia inserire un Identity user bisogna controllare bene che gli attibuti della classe siano generati da funzioni costanti che non cambiamo a ogni iterazione
   
-
+'''Csharp
 protected override void OnModelCreating(ModelBuilder modelBuilder)
 {
     base.OnModelCreating(modelBuilder);
        
-        '''
+        
         modelBuilder.Entity<ApplicationUser>().HasData(
         new ApplicationUser {
         Id = "9f5de216-b03f-43d2-b0a1-4f9d6bb5c126",
@@ -22,5 +22,6 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
         SecurityStamp = "c4f6e9a4-1111-2222-3333-aaaaaaaaaaaa",               /SecurityStamp, e Concorrency gli è stato assefba due valori                                    
         ConcurrencyStamp = "d7b2c9f0-4444-5555-6666-bbbbbbbbbbbb"'''          /creati dal generatore <a href="https://www.guidgenerator.com/" target="_blank" rel="noopener">Guid</a>
     }
-);'
+);
 }
+'''
