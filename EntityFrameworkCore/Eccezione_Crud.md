@@ -40,7 +40,9 @@ Per rendere la funzione "onesta", possiamo avvolgere l'operazione in un tipo com
 ```csharp
 
 // Utilizzando un wrapper funzionale come suggerito dai sorgenti
-public Exceptional<Unit> SafeAdd(User nuovoUtente)
+// Per atgomenti come la ricercaa la funzione safeCrud avrevvi avuto come argomento di titirno Exceptional<_Unit_>
+// In questo caso l operazione crud add non produce outi è un void 
+public Exceptional<_Unit_> SafeCrud(User nuovoUtente)
 {
     try
     {
