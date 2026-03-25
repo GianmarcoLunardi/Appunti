@@ -1,0 +1,2 @@
+È perfetto quando ricevi dati da API o database dove la struttura può variare 
+(es. un messaggio che può essere un testo, un'immagine o un comando).
