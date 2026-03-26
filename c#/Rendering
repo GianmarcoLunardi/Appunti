@@ -3,6 +3,13 @@ Per rendering si intende il porocesso in cui un controllere manda dei dati a una
 Controller.Action1 -> View
 
 #Modeel binding
+La view ha dei campi visibili e non visibili
+```csharp
+<input type="hidden" name="utenteId" value="12345">
+<input name="utenteId" value="12345">
+```
+
+
 Una pagina che contiene un form , invia i dati inseriti, le invia a un action
 View -> Controller.Action2
 
