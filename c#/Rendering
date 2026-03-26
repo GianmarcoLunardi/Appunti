@@ -1,0 +1,24 @@
+## Rendering
+Per rendering si intende il porocesso in cui un controllere manda dei dati a una view da visualizzare
+Controller.Action1 -> View
+
+#Modeel binding
+Una pagina che contiene un form , invia i dati inseriti, le invia a un action
+View -> Controller.Action2
+
+```csharp
+[HttpPost]
+public IActionResult Action2(Utente u) 
+{
+    // Il binding è già avvenuto qui! 
+    // 'u' ha già i dati inseriti dall'utente.
+
+    if (ModelState.IsValid) // Verifica se i dati rispettano i DataAnnotations
+    {
+        // Salva nel database...
+        return RedirectToAction("Successo");
+    }
+
+    return View(u); // Se ci sono errori, rimanda alla form con i dati inseriti
+}
+```
