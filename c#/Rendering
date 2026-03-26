@@ -29,3 +29,7 @@ public IActionResult Action2(Utente u)
     return View(u); // Se ci sono errori, rimanda alla form con i dati inseriti
 }
 ```
+
+Altri metodi per passare oggetti fra Action
+*ViewBeg
+*Session
