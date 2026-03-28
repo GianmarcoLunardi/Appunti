@@ -2,8 +2,11 @@
  utilizza **HasData** all’interno di **OnModelCreating** per inserire ruoli, utenti e associazioni utente-ruolo in modo statico
 
   Caso in cui si voglia inserire un Identity user bisogna controllare bene che gli attibuti della classe siano generati da funzioni costanti che non cambiamo a ogni iterazione
-  
-'''Csharp
+
+Per generare dei nuovi guoi è possibile utilizzare sitoweb
+GuidGenerator.com  [GuidGenerator.com](https://www.GuidGenerator.com)
+```Csharp
+
 protected override void OnModelCreating(ModelBuilder modelBuilder)
 {
     base.OnModelCreating(modelBuilder);
@@ -24,4 +27,4 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
     }
 );
 }
-'''
+```
