@@ -1,0 +1,24 @@
+1) Inserire il link alla libreria (sia percorso fisico wwwRoot si percorso web url) 
+Inserire la libreiria nella pagina di layout
+
+<script src="~/Views/Shared/_Layout.cshtml"></script>
+2) sulla view alla fine del file inserire lo script
+```Csharp
+
+
+@section Scripts {
+
+    // codice view dentro un file .cshtml
+    <script>
+        // Passaggio di una stringa semplice
+        const nomeUtente = "@ViewBag.NomeUtente";
+
+        // Passaggio di un oggetto complesso (usando JSON)
+        const impostazioni = @Html.Raw(Json.Serialize(Model.Impostazioni));
+
+        console.log("Benvenuto " + nomeUtente);
+    </script>
+    // Oppure inserire il riferiemnto a un file Javascript che risiede dentro una directory wwwRooot
+    <script src="~/js/mio-script-personalizzato.js"></script>
+}
+```
