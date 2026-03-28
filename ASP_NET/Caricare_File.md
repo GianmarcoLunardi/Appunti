@@ -8,23 +8,35 @@ Classe ViewModel {
 
 public class DocumentiController : Controller
 {
-    
+    private readonly IWebHostEnvironment _WebHostEnvironment;
+
+    // viene creata una di , la di esiste già nella libreria asp net
+    public DocumentiController(IWebHostEnvironment WebHostEnvironment)
+    {
+        _WebHostEnvironment = WebHostEnvironment;
+    }
 
     public IActionResult CaricaFile()
     {
         // Viene ceato un oggetto vuoto da inviare alla view, il campo url contiene il nome del file
-        // che verrà inserito dentro l imput img
+        // <input type="file" _name="mioFile"_ class="form-control" />
         return View();
     }
 
     // POST: /Documenti/CaricaFile
+    // il nome della variabile (mioFile) viene dichiarato dal tag name, della view CaricaFile
+    //
     [HttpPost]
-    public async Task<IActionResult> CaricaFile(IFormFile mioFile)
+    public async Task<IActionResult> CaricaFile_Post (IFormFile mioFile)
     {
         if (mioFile != null && mioFile.Length > 0)
         {
+            
             // Definisci dove salvare il file (es. cartella "uploads")
-            var percorsoSorgente = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads", mioFile.FileName);
+            // legge la varialibe  per sapere l indirizzo fisico di partenza del sito
+            string wwwRoot = _WebHostEnvironment.WebRootPath ;
+            // "Foto" è una cartella fisica nel progetto nella cartella wwwRoot
+            var percorsoSorgente = Path.Combine( WwwRoot, "Foto", mioFile.FileName);
 
             using (var stream = new FileStream(percorsoSorgente, FileMode.Create))
             {
