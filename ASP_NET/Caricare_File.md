@@ -36,8 +36,13 @@ public class DocumentiController : Controller
             // legge la varialibe  per sapere l indirizzo fisico di partenza del sito
             string wwwRoot = _WebHostEnvironment.WebRootPath ;
             // "Foto" è una cartella fisica nel progetto nella cartella wwwRoot
+
+            // nomeFile deve essere composto da una parte casuale per non generare il sovrapponimento
+            // con altro file cartella, po Guid+nome, o dateteime+nome
+            string FileName = Guid.NewGuid.ToString() + path.GetExtention(mioFile.FileName ; 
             var percorsoSorgente = Path.Combine( WwwRoot, "Foto", mioFile.FileName);
 
+            ViewModel.url = "\" + "cartella" + mioFile;
             using (var stream = new FileStream(percorsoSorgente, FileMode.Create))
             {
                 await mioFile.CopyToAsync(stream);
