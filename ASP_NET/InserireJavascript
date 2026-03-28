@@ -1,11 +1,12 @@
 1) Inserire il link alla libreria (sia percorso fisico wwwRoot si percorso web url) 
 Inserire la libreiria nella pagina di layout
 
+```HTML
 <script src="~/Views/Shared/_Layout.cshtml"></script>
+```
+
 2) sulla view alla fine del file inserire lo script
-```Csharp
-
-
+```CSharp
 @section Scripts {
 
     // codice view dentro un file .cshtml
