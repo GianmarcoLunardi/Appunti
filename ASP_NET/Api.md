@@ -1,14 +1,44 @@
+## Viste
+Con le action si possono creare la logica delle _viste_ 
 
-olte alle acrion è possibile creare delle Api per rendere il file più standar
 ```csharp
-  #region
-
-        public async Task<IEnumerable<Prodotto>> GetAllAsync()
+        public IActionResult Index() 
         {
-            List risultato = await _context.Prodotti.ToListAsync();
-            return Json( new { data = risultato}); // Ok(new { data = risultato});
+            List<Company> objCompanyList = _unitOfWork.Company.GetAll().ToList();
+           
+            return View(objCompanyList);
         }
-Endrigion
+```
+##API
+olte alle action è possibile creare delle Api per rendere il file più standar
+usando i comando OK() ecc
+```csharp
+  #region API CALLS
+
+        [HttpGet]
+        public IActionResult GetAll()
+        {
+            List<Company> objCompanyList = _unitOfWork.Company.GetAll().ToList();
+            return Json(new { data = objCompanyList });
+        }
+
+
+        [HttpDelete]
+        public IActionResult Delete(int? id)
+        {
+            var CompanyToBeDeleted = _unitOfWork.Company.Get(u => u.Id == id);
+            if (CompanyToBeDeleted == null)
+            {
+                return Json(new { success = false, message = "Error while deleting" });
+            }
+
+            _unitOfWork.Company.Remove(CompanyToBeDeleted);
+            _unitOfWork.Save();
+
+            return Json(new { success = true, message = "Delete Successful" });
+        }
+
+        #endregion
 
   __notare__ che il contenuto della jsono viene forsato a essere restituito come json
   puo essere usato anche il comando _ok(data)_
