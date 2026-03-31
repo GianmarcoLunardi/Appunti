@@ -1,0 +1,38 @@
+## Gestione errori sulle pagine.
+Durante l esecuzione di una pagina web si scatena un eccezione o un orrere in generale
+Ci spostiamo in una pagina che segnala all utente il tipo di errore 
+
+Configurare il middleware
+```Csharp
+var app = builder.Build();
+
+if (app.Environment.IsDevelopment())
+{
+    // Mostra la "Yellow Screen of Death" con stack trace completo
+    app.UseDeveloperExceptionPage();
+}
+else
+{
+    // 1. Gestisce le eccezioni non catturate (500) reindirizzando a una pagina amichevole
+    app.UseExceptionHandler("/Error");
+
+    // 2. Gestisce errori di stato HTTP come il 404 (Pagina non trovata)
+    // {0} viene sostituito dal codice errore (es. 404, 403)
+    app.UseStatusCodePagesWithReExecute("/Error/{0}");
+    
+    app.UseHsts();
+}
+```
+
+## Gestione degli Error Status 404,500
+
+```Csharp
+[Route("/Error/{statusCode}")]
+public void OnGet(int statusCode)
+{
+    if (statusCode == 404) 
+    {
+        ViewData["Message"] = "Ops! La pagina che cerchi è svanita nel nulla.";
+    }
+}
+```
