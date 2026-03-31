@@ -1,3 +1,25 @@
+## Gestione degli errori co interfaccia IExceptionHandler
+L interfaccia definisce una classe che gestisce tutte le eccezioni.
+Quando si verifica una eccezione viene consultato il log, il quale fornisce altri dettagli sull errore.
+
+configurazione del Middleware
+C#
+```Csharp
+var builder = WebApplication.CreateBuilder(args);
+
+// Aggiungi i servizi necessari
+builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
+builder.Services.AddProblemDetails(); // Genera risposte standard RFC 7807
+
+var app = builder.Build();
+
+// ATTENZIONE: Questo middleware deve essere chiamato per attivare gli handler registrati
+app.UseExceptionHandler(); 
+app.MapGet("/", () => { throw new Exception("Boom!"); });
+app.Run();
+```
+Poi guardre il manuale
+
 ## Gestione errori sulle pagine.
 Durante l esecuzione di una pagina web si scatena un eccezione o un orrere in generale
 Ci spostiamo in una pagina che segnala all utente il tipo di errore 
