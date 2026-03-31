@@ -1,0 +1,42 @@
+## Controllo dei dati inviati (model o ViewModel) può essere fatta lato server tramite
+e Annotation es:
+```CSharp
+using System.ComponentModel.DataAnnotations;
+
+public class Utente
+{
+    public int Id { get; set; }
+
+    [Required(ErrorMessage = "Il nome è obbligatorio")]
+    [StringLength(50, MinimumLength = 3, ErrorMessage = "Il nome deve avere tra 3 e 50 caratteri")]
+    public string Nome { get; set; }
+
+    [Required]
+    [EmailAddress(ErrorMessage = "Formato email non valido")]
+    public string Email { get; set; }
+
+    [Range(18, 99, ErrorMessage = "Devi avere tra 18 e 99 anni")]
+    public int Eta { get; set; }
+
+    [RegularExpression(@"^[A-Z]{6}\d{2}[A-Z]\d{2}[A-Z]\d{3}[A-Z]$ text", Error if = "Codice Fiscale non valido")]
+    public string CodiceFiscale { get; set; }
+}
+```
+
+Una Volta che L action la riceve può eseguire al lato Server un controllo del tipo di dati:
+
+```CSharp
+public IActionResult Create(Utente nuovoUtente)
+{
+    if (!ModelState.IsValid)
+    {
+        // Se i dati non sono validi, restituisci la vista con gli errori
+        return View(nuovoUtente); 
+    }
+
+    // Se arrivi qui, i dati sono puliti e pronti per il database
+    _context.Add(nuovoUtente);
+    _context.SaveChanges();
+    return RedirectToAction("Index");
+}
+```
