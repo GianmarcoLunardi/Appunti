@@ -24,8 +24,29 @@ Poi guardre il manuale
 Durante l esecuzione di una pagina web si scatena un eccezione o un orrere in generale
 Ci spostiamo in una pagina che segnala all utente il tipo di errore 
 
-Configurare il middleware
+launchSettings.json
+Dichiarazione dello stato delle variabili di ambiente 
+
+```JSON
+{
+  "profiles": {
+    "http": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"  // <-- SETTATA QUI
+      }
+    }
+  }
+}
+```
+Midlewere
+Program.cs
+Controlla lo stato lo stato in cui viene eseguito codice
+Nel caso sia stata lanciata un eccezione , essa viene gestita dalla Action Error . in Home Controller
 ```Csharp
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
@@ -45,6 +66,8 @@ else
     app.UseHsts();
 }
 ```
+
+da finire di verificare
 
 ## Gestione degli Error Status 404,500
 
