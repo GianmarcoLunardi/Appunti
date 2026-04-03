@@ -1,0 +1,40 @@
+contiene i file di tutto il progretto
+al fine di ottenere una maggiore manutenibilità è bene spezzare il file in tre strati
+*Web Layer
+*Service Layer
+*Repository Layer
+
+Ogni strato è una libreria che contiene delle funzionalità e bisogbna configurare sia le librerie ,
+sia le dipendenze da alrei proigetti
+
+```XML
+<Project Sdk="Microsoft.NET.Sdk">
+
+/// paramentri di configurazione
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+  
+ /// Riferimenti a librerie nuget
+  <ItemGroup>
+    <PackageReference Include="coverlet.collector" Version="6.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="9.0.9" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
+    <PackageReference Include="Moq" Version="4.20.72" />
+    <PackageReference Include="NUnit" Version="4.2.2" />
+    <PackageReference Include="NUnit.Analyzers" Version="4.4.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.6.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+  /// riferimenti a librerie sritte dall utente
+    <ProjectReference Include="..\EcdlBooking\EcdlBooking.csproj" />
+  </ItemGroup>
+
+</Project>
+```
