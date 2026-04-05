@@ -1,9 +1,10 @@
-1) Inserire il link alla libreria (sia percorso fisico wwwRoot si percorso web url) 
-Inserire la libreiria nella pagina di layout
-
+1)/Views/Shared/_Layout.cshtml
+ Inserire il link alla libreria (sia percorso fisico wwwRoot si percorso web url) 
+Inserire la libreiria nella pagina di layout l indirizzo fisico della libreria (se scaricata o l indirizzo 
 ```HTML
-<script src="~/Views/Shared/_Layout.cshtml"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 ```
+
 
 2) sulla view alla fine del file inserire lo script
 ```CSharp
@@ -22,4 +23,16 @@ Inserire la libreiria nella pagina di layout
     // Oppure inserire il riferiemnto a un file Javascript che risiede dentro una directory wwwRooot
     <script src="~/js/mio-script-personalizzato.js"></script>
 }
+```
+note:
+Assicurarsi che nella pagina layout /Views/Shared/_Layout.cshtml
+contengra il contenitore per visualizzare lo script passato
+```CSharp
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
 ```
