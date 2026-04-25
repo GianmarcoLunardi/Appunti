@@ -26,3 +26,11 @@ let divisioneSicura (dividendo: float) (divisore: float) =
     else
         Some (dividendo / divisore)
 ```
+## utilizzo della piper line , una sequenza di funzioni , una seguita dall altra
+```fsharp
+let calcoloComplesso =
+    divisioneSicura 100.0 2.0          // Risultato: Some(50.0)
+    |> Option.bind (fun x -> divisioneSicura x 0.0) // Prova a dividere per zero
+```
+
+in questo laso la piperline restitutisce null in quanto una funzione è null
