@@ -18,5 +18,11 @@ $"{a} e {b}""
 
 ```
 ## Option
-
+restitutisce due valorei o some oppure none 
 ```fsharp
+let divisioneSicura (dividendo: float) (divisore: float) =
+    if divisore = 0.0 then
+        None // Non possiamo dividere per zero, restituiamo la "scatola vuota"
+    else
+        Some (dividendo / divisore)
+```
