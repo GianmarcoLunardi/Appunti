@@ -1,6 +1,38 @@
 ##Funzioni
+sintassi du una funzione 
+
+```fsharp
+let raddoppia (x:int) : int = x * 2
+```
+spesso le funzioni riconoscono il tipo di dato (inferenza) e non importa definirlo
+se lo stato di una funzione si utilizza l indentazione
+nopn viene mai usato il return
+```fsharp
+let calculateTotal (customer:Customer) (spend:decimal) : decimal =
+    let discount =
+        if customer.IsEligible && spend >= 100.0M
+        then (spend * 0.1M) else 0.0M
+    let total = spend - discount
+    total    //esegue la funzione return
+```fsharp
+
+*Unit
+Il tipo unit indica l'assenza di un valore specifico
+Possiede un unico valore possibile, scritto come una coppia di parentesi tonde: ()
+Nelle firme delle funzioni, viene indicato con il nome del tipo: unit
+Nel codice, viene utilizzato il valore letterale: ()
+
+
+
+La funzione deve essere indentato pe
+
+
+
+r delineare il proprio scope
 
 Si può esereude ul composto di due funzioni 
 f|>g  l esecuzione delle funzione f viene usato come dominio della funzione g
 E' possibile cereare una nuva funzione h(s) = f(g(x) senza però valutarla per qualche valore
+```fsharp
 let h = f >> g
+```
