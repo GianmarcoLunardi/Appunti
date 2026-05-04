@@ -1,0 +1,6 @@
+##Funzioni
+
+Si può esereude ul composto di due funzioni 
+f|>g  l esecuzione delle funzione f viene usato come dominio della funzione g
+E' possibile cereare una nuva funzione h(s) = f(g(x) senza però valutarla per qualche valore
+let h = f >> g
