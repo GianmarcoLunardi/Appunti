@@ -1,4 +1,4 @@
-##Railway Oriented Programming (ROP)
+## Railway Oriented Programming (ROP)
 
 L'analogia del binario è alla base del ptreno*
 il binario principale rappresenta il "percorso felice" (happy path), mentre il binario secondario raccoglie i fallimenti
@@ -9,6 +9,21 @@ il binario principale rappresenta il "percorso felice" (happy path), mentre il b
 # solitamente Either<L, R>
 # .bind() permentte di concatenare la funzione
 
+[Vai alla pagina](https://github.com/GianmarcoLunardi/Appunti/blob/main/Funzionale/Either().md)
+
+
+Librerie che lo omplementano
+
+LanguageExt    Option<T>, 
+Funcky,LanguageExt Either<TLeft, TRight>, e molti altri.
+
+
+* Implrmentazione base
+Implementazione
+
+è stata utilizzata la libreria LanguageExt
+
+```csharp
 Es1:
 // Definiamo i piccoli pezzi del binario
 public Either<Error, User> ValidateEmail(User user) => 
@@ -26,3 +41,4 @@ public Either<Error, Unit> RegisterWorkflow(User user) =>
         .Bind(ValidateEmail)  // Se fallisce, devia sul binario errore
         .Bind(CheckUserExists)
         .Bind(PersistUser);   // Se arriva qui, salva l'utente
+```
