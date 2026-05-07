@@ -41,4 +41,24 @@ public Either<Error, Unit> RegisterWorkflow(User user) =>
         .Bind(ValidateEmail)  // Se fallisce, devia sul binario errore
         .Bind(CheckUserExists)
         .Bind(PersistUser);   // Se arriva qui, salva l'utente
+
 ```
+
+## Railway Oriented Programming
+
+tecnica di programmazione funzionale che si semplica in una concatenazione di funzioni in cui si concatenano una serie di funzioni una dopo l altra.
+
+Le funzioni ritoirnano in genere i tipi Result e il tipo Either, nel caso in cui si ha un errore , l esecuzione del flusso di funzioni termina
+
+Esempio
+Funzione1
+.Bind(Funzione2)
+.Bind(Funzione3)
+.Bind(Funzione3)
+.Match(
+    Some: x => x * 2,  // Se il parsing riesce (Some), raddoppia il valore
+    None: () => 0      // Se fallisce (None), restituisce 0
+);
+
+
+la catena finisce con il match il quale delinea un risultato
