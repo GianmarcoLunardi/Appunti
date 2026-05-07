@@ -51,6 +51,8 @@ tecnica di programmazione funzionale che si semplica in una concatenazione di fu
 Le funzioni ritoirnano in genere i tipi Result e il tipo Either, nel caso in cui si ha un errore , l esecuzione del flusso di funzioni termina
 
 Esempio
+
+```csharp
 Funzione1
 .Bind(Funzione2)
 .Bind(Funzione3)
@@ -59,6 +61,6 @@ Funzione1
     Some: x => x * 2,  // Se il parsing riesce (Some), raddoppia il valore
     None: () => 0      // Se fallisce (None), restituisce 0
 );
-
+```
 
 la catena finisce con il match il quale delinea un risultato
