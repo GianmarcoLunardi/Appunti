@@ -1,5 +1,5 @@
 
-** AI Prompts
+## AI Prompts
 
 Predictive and generative AI are related in that they use similar learning
 techni ues, but substantially different in terms of what they’re designed to
@@ -57,7 +57,7 @@ AI is creative. Both have their place in our collective future.
 [Vidu](https://www.vidu.ai)
 
 
-** Necessary Components of an AI Prompt
+## Necessary Components of an AI Prompt
 
 Whether you’re asking for text, image, or video output, your AI prompt
 needs to include the same basic components. These components include
@@ -72,7 +72,7 @@ audience, or situation.
 Restrinzioni : cose che non si vogliono faccia
 
 
-** Tipi di Prompt
+## Tipi di Prompt
 
 ** Zero-Shot Prompting
 Zero-shot prompting is the type of prompting with which you’re probably
@@ -85,7 +85,7 @@ Es:
 or in an accompanying file or webpage (write an article a out J.S. Bach
 in the style of the one at this we page: [URL]
 
-** Role-Based Prompting
+## Role-Based Prompting
 Sometimes you get better results if you tell the AI model to assume a role or
 persona when providing an answer. This is called role-based prompting, and
 it helps to assign to the AI the tone or style (or even expertise) of a given
@@ -94,14 +94,14 @@ individual or role.
 assume the role of an elementary school teacher and explain how
 clouds make it rain
 
-** Chain-of-Thought Prompting
+## Chain-of-Thought Prompting
 Chain-of-thought prompting is often used when solving math and logic
 problems, or in any instance that re uires multistep reasoning.
 The following prompt is an example of chain-of-thought prompting:
 Alice is older than Bo . Bo is older than Charlie. Who is the oldest?
 Think it through step y step.
 
-* [task] [format] [topic] [tone] [context] [re uirements/constraints]
+### [task] [format] [topic] [tone] [context] [re uirements/constraints]
 [optional elements]
 
 providing an example of what you want and how you want it. You
@@ -121,7 +121,7 @@ Blog post: [BLOG POST CONTENT]
 Write a 1,000-word log post a out [NEW TOPIC].
 
 
-** Using Role-Based Prompting
+## Using Role-Based Prompting
 Assume you are a [ROLE]. [PROMPT]
 CEO or other senior manager, for developing business plans and
 making important business decisions. Example: You are the CEO of a
@@ -130,12 +130,12 @@ Analyze the situation and propose a high-level strategic plan to
 improve retention, focusing on customer experience and new
 product development
 
-** Using Chain-of-Thought Prompting
+## Using Chain-of-Thought Prompting
 With prompt chaining, multiple prompts are
 linked together in a se uence, with the output of one prompt used as the
 input for the next.
 
-** Using Self-Consistency Prompting
+## Using Self-Consistency Prompting
 This strategy works by prompting the AI model multiple times—asking the
 same uestion but letting the AI model produce different reasoning chains
 with different degrees of randomness. This approach works best with chain
