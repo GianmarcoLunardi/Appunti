@@ -1,0 +1,44 @@
+## Il metodo POST in ASP.NET MVC con Razor
+consente di inviare dati fra pagine
+
+Definire un oggetto  modello di dati in grado di raccogliere i dati
+
+```csharp
+public class UtenteViewModel
+{
+    [Required(ErrorMessage = "Il campo è obbligatorio")]
+    [StringLength(50, MinimumLength = 3)]
+    public string Nome { get; set; }
+}
+```
+
+Si associa una view pestinamta alla raccolta dati
+```html
+@model UtenteViewModel
+<form asp-action="SalvaDati" asp-controller="Home" method="post">
+    @Html.AntiForgeryToken() 
+
+    <div class="form-group">
+        <label asp-for="@model.Nome"></label>
+        <input asp-for="@model.Nome" class="form-control" />
+        <span asp-validation-for="Nome" class="text-danger"></span>
+    </div>
+
+    <button type="submit">Invia</button>
+</form>
+
+Il Controller (Ricezione e Validazione)
+Il controller riceve l'oggetto popolato e verifica lo stato della validazione tramite ModelState.
+
+```csharp
+[HttpPost]
+[ValidateAntiForgeryToken]
+public IActionResult SalvaDati(UtenteViewModel model)
+{
+    // Verifica se i dati rispettano i requisiti definiti nel modello
+    if (!ModelState.IsValid)
+    {
+        // Se non sono validi, restituisce la view con i messaggi di errore
+        return View(model);
+    }
+```
