@@ -11,8 +11,16 @@ public class UtenteViewModel
     public string Nome { get; set; }
 }
 ```
-
-Si associa una view pestinamta alla raccolta dati
+### si crea una action che crea una view per inserimento dati
+```csharp
+[HttpGet] no!
+public IActionResult CreaUtente()
+{
+    // Inizializza un modello vuoto o con valori predefiniti
+    var model = new UtenteViewModel();
+    return View(model);
+}
+### Si associa una view pestinamta alla raccolta dati
 ```html
 @model UtenteViewModel
 <form asp-action="SalvaDati" asp-controller="Home" method="post">
@@ -21,13 +29,13 @@ Si associa una view pestinamta alla raccolta dati
     <div class="form-group">
         <label asp-for="@model.Nome"></label>
         <input asp-for="@model.Nome" class="form-control" />
-        <span asp-validation-for="Nome" class="text-danger"></span>
+        <span asp-validation-for="@Model.Nome" class="text-danger"></span>
     </div>
 
     <button type="submit">Invia</button>
 </form>
 
-Il Controller (Ricezione e Validazione)
+### Il Controller (Ricezione e Validazione)
 Il controller riceve l'oggetto popolato e verifica lo stato della validazione tramite ModelState.
 
 ```csharp
@@ -41,4 +49,8 @@ public IActionResult SalvaDati(UtenteViewModel model)
         // Se non sono validi, restituisce la view con i messaggi di errore
         return View(model);
     }
+
+    // Se validi, esegui logica di business (es. salvataggio su DB)
+    return RedirectToAction("Conferma");
+}
 ```
