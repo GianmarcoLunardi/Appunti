@@ -18,11 +18,12 @@
         Nunit3TestApplication
         Microsoft.Test.Application
       
-     **Convenzione sul nome dei file< 
-      -Una Soluzione di tipo Test si chiama con il nome della soluzione.test.Adapter
-      Es: si vuole testare la soluzione EcdlBooking il test sulla soluzione si chiamera EcdlBooking.test
-      
-      -Le struttura della cartelle della soluzione deve essere uguale nella soluzione da testate
+     **Convenzione sul nome dei file
+      -Una Soluzione di tipo Test si chiama con il nome della soluzione.test
+      Es: si vuole testare la soluzione __EcdlBooking__ il test sulla soluzione si chiamera __EcdlBooking.test__
+      Per il nome della classe si segue la precedente regola,
+      Per il nome del metodo  si utilizza più parole es:
+      Si testa il metodo si usa la convenzione di chiamarlo  __NoneMetodo_CasoDelTest_Risultato__
 
   **Creazione dei Test con Visual Studio**
   -Alla creazione del progetto:
@@ -33,16 +34,15 @@
         Nb: nwl lmomento in cui si avvia un progetto docker addicurarzi che tutti i progetti docker collegati siano avviati: sqlserver, Api, Front End
        </div>
     </div>
+Il test è composto da 3 parti
+*** Arrange : si inizializzano i valori
+***Act : si passono i valori ai metodi da testare 
+Asserte : si confronta le foluzioni sperate con quelle ottenute
+
+Esempio di codice
 
 
-
-      
-      -convenzione sul nome del metodo del test:
-      NoneMetodo_CasoDelTest_Risultato
-
-     Esempio di codice
-
-
+```csharp
     [TestFixture]
     internal class ClasseTest
     {
@@ -51,28 +51,28 @@
         public void TMetodo_CasoDelTest_Risultato()
         {
 
-            *Arrange< continie inizializzazione delle variabili da testare
+            // Arrange continie inizializzazione delle variabili da testare
             int i = 0;
-            *Act contiene il metodo da testare
+            // Act contiene il metodo da testare
             var result = math.Add(1);
-            Assertion Confronta i risultati con quelli sperati
-            result.Assert(result, verifica una condizione)
-           
-            
+            //Assertion Confronta i risultati con quelli sperati
+            result.Assert(result, verifica una condizione)     
         }
       }
 
-        
-        Al dine di creare un metodo di inizailizzazione di una classe 
+```csharp
+
+        in una classe è possiibile inizializzare oggetti e paramentri che potranno essere utilizzati su tutti i metodi 
         [setup]
         public void SetUp(){
         IService _service = new Mock<Iservice>();
         }
-        
+```       
       
       
        **Attibuti che si possono mettere al metodo da testare
        
+  ```csharp     
       [Test, TimeOut(5000)] // tempo massimo di completamento 5 sec
       [Categoty("nome della categoria che si vuole assegnare")]<br>
       [Ingnore("motivo per cui si vuole ignorare un test es: lento da eseguire")]<br>
@@ -99,7 +99,7 @@
       Assert.AreEqual(a, b)
       Assert.IsFalse(r)
       Assert.IsNull(r)
-      è possibile fornire anche una desctizione sul risultato  es: Asser.IsNull(a,"descrizione")<br>
+      è possibile fornire anche una desctizione sul risultato  es: Asser.IsNull(a,"descrizione")
       
       
       
