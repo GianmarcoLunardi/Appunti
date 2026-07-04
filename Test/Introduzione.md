@@ -1,8 +1,3 @@
-
-
-
-  
-
 ## Tipi di Test
       -Unitt
       Sono test senza dipendenze esterne
@@ -12,7 +7,7 @@
       test che sono eseguibili sull interfaccia grafica
    
     
-      In visual studio installare i pacchetti
+      Con NuGet installare i pacchetti
 
         Nunit
         Nunit3TestApplication
@@ -28,9 +23,9 @@
   **Creazione dei Test con Visual Studio**
 
 ## Il test è composto da 3 parti
-*** Arrange : si inizializzano i valori
-***Act : si passono i valori ai metodi da testare 
-Asserte : si confronta le foluzioni sperate con quelle ottenute
+__Arrange__ : si inizializzano i valori
+__Act__ : si passono i valori ai metodi da testare 
+__Asserte__ : si confronta le foluzioni sperate con quelle ottenute
 
 Esempio di codice
 
