@@ -23,6 +23,12 @@ Si testa il metodo si usa la convenzione di chiamarlo  __NoneMetodo_CasoDelTest_
   **Creazione dei Test con Visual Studio**
 
 ## Il test è composto da 3 parti
+```csharp
+//Arange
+//Act
+//Asserte
+```
+
 __Arrange__ : si inizializzano i valori
 __Act__ : si passono i valori ai metodi da testare 
 __Asserte__ : si confronta le foluzioni sperate con quelle ottenute
