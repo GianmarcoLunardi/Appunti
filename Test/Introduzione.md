@@ -1,20 +1,19 @@
 ## Tipi di Test
--Unitt
+Unitt 
 Sono test senza dipendenze esterne
--integration
+integration
 sono test con dipendenze estene come esempio db o file.
--End-To-End 
+End-To-End 
 test che sono eseguibili sull interfaccia grafica
    
-    
-Con NuGet installare i pacchetti
-
-Nunit
-Nunit3TestApplication
-Microsoft.Test.Application
-      
-**Convenzione sul nome dei file
--Una Soluzione di tipo Test si chiama con il nome della soluzione.test
+Con NuGet installare i pacchetti 
+  
+Nunit  
+Nunit3TestApplication  
+Microsoft.Test.Application  
+     
+## Convenzione sul nome dei file
+Una Soluzione di tipo Test si chiama con il nome della soluzione.test
 Es: si vuole testare la soluzione __EcdlBooking__ il test sulla soluzione si chiamera __EcdlBooking.test__
 Per il nome della classe si segue la precedente regola,
 Per il nome del metodo  si utilizza più parole es:
@@ -29,9 +28,9 @@ Si testa il metodo si usa la convenzione di chiamarlo  __NoneMetodo_CasoDelTest_
 //Asserte
 ```
 
-__Arrange__ : si inizializzano i valori
-__Act__ : si passono i valori ai metodi da testare 
-__Asserte__ : si confronta le foluzioni sperate con quelle ottenute
+__Arrange__ : si inizializzano i valori  
+__Act__ : si passono i valori ai metodi da testare   
+__Asserte__ : si confronta le foluzioni sperate con quelle ottenute  
 
 Esempio di codice
 
