@@ -26,15 +26,8 @@
       Si testa il metodo si usa la convenzione di chiamarlo  __NoneMetodo_CasoDelTest_Risultato__
 
   **Creazione dei Test con Visual Studio**
-  -Alla creazione del progetto:
-   -Dopo la creazione del progetto:
-    da Esplora soluzione Cliccare sul progetto>selezionare supporto Docker
-      la file lauchsetting.json verrà aggiunto un profilo Docker
 
-        Nb: nwl lmomento in cui si avvia un progetto docker addicurarzi che tutti i progetti docker collegati siano avviati: sqlserver, Api, Front End
-       </div>
-    </div>
-Il test è composto da 3 parti
+## Il test è composto da 3 parti
 *** Arrange : si inizializzano i valori
 ***Act : si passono i valori ai metodi da testare 
 Asserte : si confronta le foluzioni sperate con quelle ottenute
