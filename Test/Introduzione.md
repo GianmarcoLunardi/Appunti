@@ -1,24 +1,24 @@
 ## Tipi di Test
-      -Unitt
-      Sono test senza dipendenze esterne
-      -integration
-      sono test con dipendenze estene come esempio db o file.
-      -End-To-End 
-      test che sono eseguibili sull interfaccia grafica
+-Unitt
+Sono test senza dipendenze esterne
+-integration
+sono test con dipendenze estene come esempio db o file.
+-End-To-End 
+test che sono eseguibili sull interfaccia grafica
    
     
-      Con NuGet installare i pacchetti
+Con NuGet installare i pacchetti
 
-        Nunit
-        Nunit3TestApplication
-        Microsoft.Test.Application
+Nunit
+Nunit3TestApplication
+Microsoft.Test.Application
       
-     **Convenzione sul nome dei file
-      -Una Soluzione di tipo Test si chiama con il nome della soluzione.test
-      Es: si vuole testare la soluzione __EcdlBooking__ il test sulla soluzione si chiamera __EcdlBooking.test__
-      Per il nome della classe si segue la precedente regola,
-      Per il nome del metodo  si utilizza più parole es:
-      Si testa il metodo si usa la convenzione di chiamarlo  __NoneMetodo_CasoDelTest_Risultato__
+**Convenzione sul nome dei file
+-Una Soluzione di tipo Test si chiama con il nome della soluzione.test
+Es: si vuole testare la soluzione __EcdlBooking__ il test sulla soluzione si chiamera __EcdlBooking.test__
+Per il nome della classe si segue la precedente regola,
+Per il nome del metodo  si utilizza più parole es:
+Si testa il metodo si usa la convenzione di chiamarlo  __NoneMetodo_CasoDelTest_Risultato__
 
   **Creazione dei Test con Visual Studio**
 
@@ -48,19 +48,18 @@ Esempio di codice
         }
       }
 
+```
+in una classe è possiibile inizializzare oggetti e paramentri che potranno essere utilizzati su tutti i metodi 
 ```csharp
-
-        in una classe è possiibile inizializzare oggetti e paramentri che potranno essere utilizzati su tutti i metodi 
         [setup]
         public void SetUp(){
         IService _service = new Mock<Iservice>();
         }
 ```       
       
-      
-       **Attibuti che si possono mettere al metodo da testare
+** Attibuti che si possono mettere al metodo da testare
        
-  ```csharp     
+```csharp     
       [Test, TimeOut(5000)] // tempo massimo di completamento 5 sec
       [Categoty("nome della categoria che si vuole assegnare")]<br>
       [Ingnore("motivo per cui si vuole ignorare un test es: lento da eseguire")]<br>
@@ -88,7 +87,7 @@ Esempio di codice
       Assert.IsFalse(r)
       Assert.IsNull(r)
       è possibile fornire anche una desctizione sul risultato  es: Asser.IsNull(a,"descrizione")
-      
+```      
       
       
     <spamc lass=".text-success"> Alla creazione del progetto: </spam> spuntare Docker
