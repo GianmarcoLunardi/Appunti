@@ -10,9 +10,9 @@ Con NuGet installare i pacchetti
   
 Nunit  
 Nunit3TestApplication  
-NUnit3TestAdapter
+NUnit3TestAdapter  
 Microsoft.Test.Application  
-     
+Microsoft.NET.Test.Sdk  
 ## Convenzione sul nome dei file
 Una Soluzione di tipo Test si chiama con il nome della soluzione.test
 Es: si vuole testare la soluzione __EcdlBooking__ il test sulla soluzione si chiamera __EcdlBooking.test__
@@ -58,17 +58,28 @@ Esempio di codice
 in una classe è possiibile inizializzare oggetti e paramentri che potranno essere utilizzati su tutti i metodi 
 ```csharp
         [setup]
+         // indica una procedura di inizializzazione prima di eseguire un metodo  
         public void SetUp(){
         IService _service = new Mock<Iservice>();
         }
+         // Procedura di chiusura del test
+        [TearDown]
+         public void TearDown() {
+         connection.Close();
+         Console.WriteLine("Database connection closed after test.");
+         }
+         // è possivile che la proceura inizializzazione dovrà essere fatta a chiusura e instanza delle classe
+         [OneTimeSetUp] and [OneTimeTearDown]  
 ```       
       
 ** Attibuti che si possono mettere al metodo da testare
        
-```csharp     
-      [Test, TimeOut(5000)] // tempo massimo di completamento 5 sec
-      [Categoty("nome della categoria che si vuole assegnare")]<br>
-      [Ingnore("motivo per cui si vuole ignorare un test es: lento da eseguire")]<br>
+```csharp
+      [Test] // indica che il metodo è oggetto di test
+      [Test(Description = "Verifies the addition of two positive integers")]   
+      [Test, TimeOut(5000)] // tempo massimo di completamento 5 sec  
+      [Categoty("nome della categoria che si vuole assegnare")]  
+      [Ingnore("motivo per cui si vuole ignorare un test es: lento da eseguire")]  
       [TestCase(1,2,3)]
       [TestCase(4.5.6)]
       metido_da_testare (int a , int b, int c)        {
@@ -92,10 +103,19 @@ in una classe è possiibile inizializzare oggetti e paramentri che potranno esse
       -Su singoli valori
       Assert.That(result, Is.EqualTo(expected));
 
-      Assert.AreEqual(a, b)
+      Assert.AreEqual(a, b) //sono uguali  
       Assert.IsFalse(r)
       Assert.IsNull(r)
+      Assert.IsNotNull(r)   
       è possibile fornire anche una desctizione sul risultato  es: Asser.IsNull(a,"descrizione")
+      // esegue tutti i test poi dice quali sono falliti
+      Assert.Multiple(() => {
+                              Assert.That(user.Name, Is.Not.Empty, "Name should not be empty");  
+                              Assert.That(user.Email, Does.Contain("@"), "Email should contain @"); 
+                              Assert.That(user.Age, Is.GreaterThan(18), "User should be an adult");  
+                              });
+
+
 ```      
       
       
