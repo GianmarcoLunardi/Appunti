@@ -10,6 +10,7 @@ Con NuGet installare i pacchetti
   
 Nunit  
 Nunit3TestApplication  
+NUnit3TestAdapter
 Microsoft.Test.Application  
      
 ## Convenzione sul nome dei file
@@ -84,10 +85,13 @@ in una classe è possiibile inizializzare oggetti e paramentri che potranno esse
       Assert.That(stringa, DoesContain(""))
       Assert.That(stringa, Has.Lenth.CraracterThen(10))
       -Collezioni
+      Assert.That(collection, Has.Member(item));
       Assert.That(collezione, Has.Count.EqualTo(5))
       Assert.That(collezione, Conmtain.Items(5))
       Assert.That(collezione, IsOrdered())
       -Su singoli valori
+      Assert.That(result, Is.EqualTo(expected));
+
       Assert.AreEqual(a, b)
       Assert.IsFalse(r)
       Assert.IsNull(r)
