@@ -61,7 +61,10 @@ using NUnit.Framework;
    // It.IsAny<T> un qualsiasi valore di tipo T
   mockEmailService.Setup(m => m.SendEmail(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()))
  .Returns(true);
-// qualsiasi valore stringa
+//In questo test, stiamo creando un mock di IEmailService, configurandolo affinché restituisca true quando viene chiamato il metodo SendEmail e, successivamente, stiamo verificando che sia stato invocato con gli argomenti corretti."  
+
+
+
  //si istanz1a la classe Controller che poi chimera la DI del Servizio
  var Controller = new UserService(mockEmailService.Object);
  // Act 
@@ -73,7 +76,7 @@ using NUnit.Framework;
  // è possibile verifica anche uno specifico paramentro della chiamata al servizio
  Controller.Verify(m =>
  m.SendEmail("test@example.com", "Welcome!", "Welcome to our service!"), Times.Once); 
-  // inoltre specifica che il servizio è stato chiamato una sola volta
+  // ndel caso si vuole testare che il servizio è stato chiamato solo una volta Time.Once
  }
 ** note:
 Il Moq può implementare più metodi 
