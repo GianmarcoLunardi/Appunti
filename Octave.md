@@ -43,5 +43,9 @@ printf( A(1,2) );
 % Vettore colonna 4x1 (elementi separati da punto e virgola)
 v_col = [1; 3; 5; 7]
 ```
+## Stampa di Funzioni
+
+E
+
 
 
