@@ -38,6 +38,8 @@ un matrice di una sola riga e' chiamata vettore , la rappresentazione id matrici
 A = [1,  2,  3; 
      4,  5,  6; 
      7,  8,  9]
+% Lettura di un elemento
+printf( A(1,2) );
 % Vettore colonna 4x1 (elementi separati da punto e virgola)
 v_col = [1; 3; 5; 7]
 ```
