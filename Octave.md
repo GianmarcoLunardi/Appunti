@@ -45,7 +45,35 @@ v_col = [1; 3; 5; 7]
 ```
 ## Stampa di Funzioni
 
-E
+stampa di valori scalari
+printf("Pi con 2 decimali: %.2f\n", pi_greco);
+
+Stampa di piu punti per ottenere un grafico.
+
+```octave
+% PERSONALIZZAZIONE GRAFICO
+% title('Titolo del Grafico')	Aggiunge il titolo in alto
+% xlabel('Asse X')	Inserisce l'etichetta dell'asse X
+% ylabel('Asse Y')	Inserisce l'etichetta dell'asse Y
+% grid on / grid off	Attiva o disattiva la griglia di sfondo
+% legend('Serie 1', 'Serie 2')	Mostra la legenda dei dati
+% xlim([min, max])	Imposta i limiti visibili dell'asse X
+% ylim([min, max])	Imposta i limiti visibili dell'asse Y
+
+% Definizione dei punti sul asse x
+VettX = [1,  2,  3,  4,  5,  6];
+% Definizione dei valori dei punti del codomini da utilizzare il pinto .
+VettY = sen(VettX.);
+% Lettura di un elemento
+plot(VettX,Vetty);
+% Vettore colonna 4x1 (elementi separati da punto e virgola)
+
+hold on; % Mantiene la figura corrente attiva
+
+% Secondo grafico (Coseno in blu tratteggiato) plot(x, y2, '--b', 'LineWidth', 2);
+```
+
+
 
 
 
