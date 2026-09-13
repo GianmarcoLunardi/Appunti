@@ -25,7 +25,21 @@ conversioni da gradi a radianti
 r = deg2rad(180);  % Risultato: 3.1416 (pi)
 gradi = rad2deg(radianti)
 pi e' il pgreco
+hypot(a, b) calcola l ipotenusa con il teorema di pitagora
 
+## Matrici
+una matrice è una tabella ordinata di elementi disposti su righe e colonne.
+le matrici sono generalmente indicate con le lettere maiuscole es A, B
+un matrice di una sola riga e' chiamata vettore , la rappresentazione id matrici e evettori
 
+```octave
+
+% Matrice 3x3 (3 righe, 3 colonne)
+A = [1,  2,  3; 
+     4,  5,  6; 
+     7,  8,  9]
+% Vettore colonna 4x1 (elementi separati da punto e virgola)
+v_col = [1; 3; 5; 7]
+```
 
 
