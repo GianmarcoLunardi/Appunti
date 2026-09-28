@@ -121,7 +121,23 @@ La sintassi di base per derivare una funzione f(x) rispetto a x è
 Derivata prima: diff(f, x)
 Derivata n-esima: diff(f, x, n)
 
+Esempio con il codice
 
+```octave
+pkg load symbolic
+syms x
+
+# Definiamo la funzione f(x) = x^3 + 2*x^2 - 5*x + 1
+f = x^3 + 2*x^2 - 5*x + 1;
+
+# Derivata prima f'(x)
+df = diff(f, x)
+# Output: (sym) 3*x^2 + 4*x - 5
+
+# Derivata seconda f''(x)
+d2f = diff(f, x, 2)
+# Output: (sym) 6*x + 4
+```
 
 
 
