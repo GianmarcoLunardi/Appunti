@@ -1,5 +1,11 @@
 # Octave
 Linguaggio di programmazione matematico
+```octave
+ help(comando) #informazioni sul comando
+ clear all   # Cancella tutte le variabili in memoria
+ clc         # Pulisce la finestra dei comandi
+ close all   # Chiude tutte le finestre dei grafici aperte
+ ```
 
 variabili (ha autoriconoscimento del tipo)
 
