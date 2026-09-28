@@ -7,9 +7,13 @@ Linguaggio di programmazione matematico
  close all   # Chiude tutte le finestre dei grafici aperte
  ```
 
-variabili (ha autoriconoscimento del tipo)
+*variabili* (ha autoriconoscimento del tipo)
 
+*disp(x)*	Stampa pulita di matrici, vettori o messaggi brevi.	disp(A)
+
+*fprintf(...)*	Output professionale formattato con decimali e tabulazioni.	fprintf('Risultato: %.1f\n', res)
 I tipi itulizzati: interi , reali , immaginari (il compilatore riconmosce il tipo con la semplice assegnazione)
+
 ```octave
 Reale = 1.2;
 Immaginario = 5 +i2;
@@ -97,7 +101,7 @@ pkg load symbolic;
 syms x             
 
 # dichiarazione delle funzioni
-f = x^2 + 3x;
+f = x^2 + 3*x;
 g = 1/x;
 h = (2*x^2 + 1)/(x^2 - 3);
 
@@ -111,11 +115,11 @@ Lh = limit(f, x, inf);
 disp("lim f(x)"); disp(Lf); 
 disp("lim g(x)"); disp(Lg_destro);
 disp("lim h(x)"); disp(Lh);
-
-
-
 ```
-
+## Derivate 
+La sintassi di base per derivare una funzione f(x) rispetto a x è
+Derivata prima: diff(f, x)
+Derivata n-esima: diff(f, x, n)
 
 
 
