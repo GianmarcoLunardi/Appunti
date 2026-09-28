@@ -73,6 +73,42 @@ hold on; % Mantiene la figura corrente attiva
 % Secondo grafico (Coseno in blu tratteggiato) plot(x, y2, '--b', 'LineWidth', 2);
 ```
 
+### Studio di funzioni
+All inizio sessione installare la libreria Symbolic
+```octave
+pkg load symbolic
+```
+## Liniti di funzioni
+Calcolo del limite di tre funzioni
+f(x) = lim (x^2 + 3x) dove x $\rightarrow$ 2
+g(x) = lim (1/x) dove x $\rightarrow$ 0+ destro
+h(x) = lim (2*x^2 + 1)/(x^2 - 3) dove x $\rightarrow$ $\infty$
+```octave
+# utilizzo della libreria
+pkg load symbolic;
+
+# dichiarazione delle funzioni
+f = x^2 + 3x;
+g = 1/x;
+h = (2*x^2 + 1)/(x^2 - 3);
+
+# calcolo dei limit
+
+Lf = limit(f, x, 2);
+Lg_destro = limit(g, x, 0, 'right');
+Lh = limit(f, x, inf);
+
+# stampa dei risultati
+disp("lim f(x)"); disp(Lf); 
+disp("lim g(x)"); disp(Lg_destro);
+disp("lim h(x)"); disp(Lh);
+
+
+
+```
+
+
+
 
 
 
