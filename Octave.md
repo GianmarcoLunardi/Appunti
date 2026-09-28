@@ -87,6 +87,9 @@ h(x) = lim (2*x^2 + 1)/(x^2 - 3) dove x $\rightarrow$ $\infty$
 # utilizzo della libreria
 pkg load symbolic;
 
+# Dichiara x come variabile simbolica
+syms x             
+
 # dichiarazione delle funzioni
 f = x^2 + 3x;
 g = 1/x;
