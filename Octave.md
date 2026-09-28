@@ -125,13 +125,13 @@ Esempio con il codice
 
 ```octave
 pkg load symbolic
-syms x
+syms x;
 
 # Definiamo la funzione f(x) = x^3 + 2*x^2 - 5*x + 1
 f = x^3 + 2*x^2 - 5*x + 1;
 
 # Derivata prima f'(x)
-df = diff(f, x)
+df = diff(f, x);
 # Output: (sym) 3*x^2 + 4*x - 5
 
 # Derivata seconda f''(x)
